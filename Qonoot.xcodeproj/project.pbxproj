@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2986DC0D14F2DAEA0031D1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC0C14F2DAEA0031D1D4 /* UIKit.framework */; };
+		2986DC0F14F2DAEA0031D1D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC0E14F2DAEA0031D1D4 /* Foundation.framework */; };
+		2986DC1114F2DAEA0031D1D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC1014F2DAEA0031D1D4 /* CoreGraphics.framework */; };
+		2986DC1714F2DAEA0031D1D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2986DC1514F2DAEA0031D1D4 /* InfoPlist.strings */; };
+		2986DC1914F2DAEA0031D1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2986DC1814F2DAEA0031D1D4 /* main.m */; };
+		2986DC1D14F2DAEA0031D1D4 /* QonootAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */; };
+		2986DC2014F2DAEA0031D1D4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2986DC1E14F2DAEA0031D1D4 /* MainStoryboard.storyboard */; };
+		2986DC2314F2DAEA0031D1D4 /* QonootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2986DC2214F2DAEA0031D1D4 /* QonootViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2986DC0814F2DAEA0031D1D4 /* Qonoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qonoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2986DC0C14F2DAEA0031D1D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2986DC0E14F2DAEA0031D1D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2986DC1014F2DAEA0031D1D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2986DC1414F2DAEA0031D1D4 /* Qonoot-Info.plist */ = {isa = PBXFileReference; path = "Qonoot-Info.plist"; sourceTree = "<group>"; };
+		2986DC1614F2DAEA0031D1D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2986DC1814F2DAEA0031D1D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2986DC1A14F2DAEA0031D1D4 /* Qonoot-Prefix.pch */ = {isa = PBXFileReference; path = "Qonoot-Prefix.pch"; sourceTree = "<group>"; };
+		2986DC1B14F2DAEA0031D1D4 /* QonootAppDelegate.h */ = {isa = PBXFileReference; path = QonootAppDelegate.h; sourceTree = "<group>"; };
+		2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QonootAppDelegate.m; sourceTree = "<group>"; };
+		2986DC1F14F2DAEA0031D1D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		2986DC2114F2DAEA0031D1D4 /* QonootViewController.h */ = {isa = PBXFileReference; path = QonootViewController.h; sourceTree = "<group>"; };
+		2986DC2214F2DAEA0031D1D4 /* QonootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QonootViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2986DC0514F2DAEA0031D1D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2986DC0D14F2DAEA0031D1D4 /* UIKit.framework in Frameworks */,
+				2986DC0F14F2DAEA0031D1D4 /* Foundation.framework in Frameworks */,
+				2986DC1114F2DAEA0031D1D4 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2986DBFD14F2DAE90031D1D4 = {
+			isa = PBXGroup;
+			children = (
+				2986DC1214F2DAEA0031D1D4 /* Qonoot */,
+				2986DC0B14F2DAEA0031D1D4 /* Frameworks */,
+				2986DC0914F2DAEA0031D1D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2986DC0914F2DAEA0031D1D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2986DC0814F2DAEA0031D1D4 /* Qonoot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2986DC0B14F2DAEA0031D1D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2986DC0C14F2DAEA0031D1D4 /* UIKit.framework */,
+				2986DC0E14F2DAEA0031D1D4 /* Foundation.framework */,
+				2986DC1014F2DAEA0031D1D4 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2986DC1214F2DAEA0031D1D4 /* Qonoot */ = {
+			isa = PBXGroup;
+			children = (
+				2986DC1B14F2DAEA0031D1D4 /* QonootAppDelegate.h */,
+				2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */,
+				2986DC1E14F2DAEA0031D1D4 /* MainStoryboard.storyboard */,
+				2986DC2114F2DAEA0031D1D4 /* QonootViewController.h */,
+				2986DC2214F2DAEA0031D1D4 /* QonootViewController.m */,
+				2986DC1314F2DAEA0031D1D4 /* Supporting Files */,
+			);
+			path = Qonoot;
+			sourceTree = "<group>";
+		};
+		2986DC1314F2DAEA0031D1D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2986DC1414F2DAEA0031D1D4 /* Qonoot-Info.plist */,
+				2986DC1514F2DAEA0031D1D4 /* InfoPlist.strings */,
+				2986DC1814F2DAEA0031D1D4 /* main.m */,
+				2986DC1A14F2DAEA0031D1D4 /* Qonoot-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2986DC0714F2DAEA0031D1D4 /* Qonoot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2986DC2614F2DAEA0031D1D4 /* Build configuration list for PBXNativeTarget "Qonoot" */;
+			buildPhases = (
+				2986DC0414F2DAEA0031D1D4 /* Sources */,
+				2986DC0514F2DAEA0031D1D4 /* Frameworks */,
+				2986DC0614F2DAEA0031D1D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Qonoot;
+			productName = Qonoot;
+			productReference = 2986DC0814F2DAEA0031D1D4 /* Qonoot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2986DBFF14F2DAE90031D1D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 2986DC0214F2DAE90031D1D4 /* Build configuration list for PBXProject "Qonoot" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2986DBFD14F2DAE90031D1D4;
+			productRefGroup = 2986DC0914F2DAEA0031D1D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2986DC0714F2DAEA0031D1D4 /* Qonoot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2986DC0614F2DAEA0031D1D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2986DC1714F2DAEA0031D1D4 /* InfoPlist.strings in Resources */,
+				2986DC2014F2DAEA0031D1D4 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2986DC0414F2DAEA0031D1D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2986DC1914F2DAEA0031D1D4 /* main.m in Sources */,
+				2986DC1D14F2DAEA0031D1D4 /* QonootAppDelegate.m in Sources */,
+				2986DC2314F2DAEA0031D1D4 /* QonootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2986DC1514F2DAEA0031D1D4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2986DC1614F2DAEA0031D1D4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2986DC1E14F2DAEA0031D1D4 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2986DC1F14F2DAEA0031D1D4 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2986DC2414F2DAEA0031D1D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2986DC2514F2DAEA0031D1D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2986DC2714F2DAEA0031D1D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Qonoot/Qonoot-Prefix.pch";
+				INFOPLIST_FILE = "Qonoot/Qonoot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2986DC2814F2DAEA0031D1D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Qonoot/Qonoot-Prefix.pch";
+				INFOPLIST_FILE = "Qonoot/Qonoot-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2986DC0214F2DAE90031D1D4 /* Build configuration list for PBXProject "Qonoot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2986DC2414F2DAEA0031D1D4 /* Debug */,
+				2986DC2514F2DAEA0031D1D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2986DC2614F2DAEA0031D1D4 /* Build configuration list for PBXNativeTarget "Qonoot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2986DC2714F2DAEA0031D1D4 /* Debug */,
+				2986DC2814F2DAEA0031D1D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2986DBFF14F2DAE90031D1D4 /* Project object */;
+}
