@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="s6p-qh-hhc">
+    <dependencies>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="akF-av-GQA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAL-SR-37n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="mqy-QW-bpc" customClass="PrayTimesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2WX-fW-ZcP">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="leF-JL-2n4">
+                                <rect key="frame" x="0.0" y="-2" width="320" height="413"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="gxx-pC-lmC">
+                                <rect key="frame" x="285" y="15" width="18" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="feH-8I-zbO" kind="modal" modalTransitionStyle="partialCurl" id="yv4-ir-s55"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="vja-ca-SMk"/>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="scrollView" destination="leF-JL-2n4" id="JHa-sa-qCt"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1747" y="-2"/>
+        </scene>
+        <scene sceneID="p3j-75-DK8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7im-4z-gkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="feH-8I-zbO" customClass="RemindersTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="UKk-cy-eKs">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="My cool cell" textLabel="quh-3s-Fmj" style="IBUITableViewCellStyleDefault" id="Et6-Ut-SQY">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="quh-3s-Fmj">
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="feH-8I-zbO" id="buS-eQ-JRS"/>
+                            <outlet property="delegate" destination="feH-8I-zbO" id="n0F-UJ-Y0A"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="O1h-Q6-1Th"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="2156" y="4"/>
+        </scene>
+        <scene sceneID="ouV-Xj-M0H">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4A9-Be-7SG" sceneMemberID="firstResponder"/>
+                <viewController id="j79-Rw-gzB" customClass="MapsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ynD-9I-NGP">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Y1G-aA-jvk">
+                                <rect key="frame" x="0.0" y="63" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="compass.jpeg" id="8EG-mn-aZ4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" image="icon-gheble.png" id="LZc-Rh-3K5">
+                                        <rect key="frame" x="80" y="80" width="160" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.26711989730000002" green="0.29911308279999999" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="aWw-n0-ZZg">
+                                <rect key="frame" x="0.0" y="41" width="320" height="370"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="aqb-tM-IgE">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="370"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="QAF-Pe-lGl">
+                                <rect key="frame" x="0.0" y="5" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Compass"/>
+                                    <segment title="Map"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.54347826089999995" blue="0.17640304809999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Qibla" image="gheble-tab.png" id="IXz-mR-dgE"/>
+                    <connections>
+                        <outlet property="compassImage" destination="8EG-mn-aZ4" id="224-Ue-vbz"/>
+                        <outlet property="compassView" destination="Y1G-aA-jvk" id="Mfk-QA-9sw"/>
+                        <outlet property="ghebleImage" destination="LZc-Rh-3K5" id="Mdo-rB-45h"/>
+                        <outlet property="map" destination="aqb-tM-IgE" id="WFt-wY-WNM"/>
+                        <outlet property="mapView" destination="aWw-n0-ZZg" id="73n-dz-hq4"/>
+                        <outlet property="segmentBar" destination="QAF-Pe-lGl" id="bOJ-Zj-YVc"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1747" y="588"/>
+        </scene>
+        <scene sceneID="LOe-Hl-615">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zwT-pl-v7k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController modalTransitionStyle="crossDissolve" id="s6p-qh-hhc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="TEJ-Dq-ewa">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mqy-QW-bpc" kind="relationship" relationship="viewControllers" id="2On-Ky-Eez"/>
+                        <segue destination="j79-Rw-gzB" kind="relationship" relationship="viewControllers" id="b5K-v6-bcm"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="997" y="220"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compass.jpeg" width="400" height="400"/>
+        <image name="gheble-tab.png" width="32" height="32"/>
+        <image name="icon-gheble.png" width="29" height="80"/>
+    </resources>
+    <classes>
+        <class className="MapsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="compassImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="compassView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="ghebleImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="segmentBar" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="PrayTimesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrayTimesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="RemindersTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RemindersTableViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
