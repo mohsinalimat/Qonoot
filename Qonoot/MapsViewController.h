@@ -1,13 +1,13 @@
 //
-//  QonootViewController.h
+//  MapsViewController.h
 //  Qonoot
 //
-//  Created by Sina on 2/20/12.
+//  Created by Sina on 2/25/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface QonootViewController : UIViewController
+@interface MapsViewController : UIViewController
 
 @end
