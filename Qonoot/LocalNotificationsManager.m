@@ -12,6 +12,7 @@
 
 @synthesize notifs = _notifs;
 @synthesize sounds = _sounds;
+@synthesize sound = _sound;
 
 - (NSArray *)sounds
 {
@@ -19,6 +20,16 @@
     return _sounds;
 }
 
+-(void)setSound:(NSString *)soundName
+{
+    _sound = soundName;
+}
+
+- (NSString *)sound
+{
+    if (!_sound) _sound = @"Default";
+    return _sound;
+}
 
 - (NSMutableArray *)notifs
 {
