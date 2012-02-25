@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "RemindersTableViewController.h"
+#import "ReminderTableViewController.h"
 
 
-@implementation RemindersTableViewController
+@implementation ReminderTableViewController
 
 @synthesize showListings;
 
@@ -36,9 +36,6 @@
 {
     [super viewDidLoad];
     
-    UIEdgeInsets inset = UIEdgeInsetsMake(50, 0, 0, 0);
-    self.tableView.contentInset = inset;
-    
     showListings = false;
     self.tableView.allowsMultipleSelection = YES;
 }
@@ -53,12 +50,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     NSString *string;
     if(section == 1){
+        string = @"Sound: ";
+    }else if(section == 2){
         if(showListings)
             string = @"For which times?";
     }
@@ -68,8 +67,10 @@
 - (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
     NSString *string;
     if(section == 0){
-        string = @"Turn on reminders for prayer times";
+        //string = @"Turn on reminders for prayer times";
     }else if(section == 1){
+            //string = @"Sound:";
+    }else if(section == 2){
         if(showListings)
             string = @"You will be reminded...";
     }
@@ -83,6 +84,9 @@
     {
         return 1;
     }else if(section == 1)
+    {
+        return 1;
+    }else if(section == 2)
     {
         if(showListings)
             return 7;
@@ -118,6 +122,10 @@
         [onOff addTarget:self action:@selector(onOffChanged:) forControlEvents:UIControlEventValueChanged];
         
     }else if(indexPath.section == 1)
+    {
+        [cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
+        cellTitle = @"Set Sound";
+    }else if(indexPath.section == 2)
     {
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
         cell.accessoryView = nil;
@@ -178,14 +186,14 @@
         showListings = NO;
     }
     
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - Table view delegate
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.section == 1)
+    if(indexPath.section == 2)
     {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         if(cell.selected){
@@ -196,12 +204,23 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 1)
+    {
+        [self performSegueWithIdentifier:@"to sounds" sender:nil];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 0)
     {
         
     }else if(indexPath.section == 1)
+    {
+        [self performSegueWithIdentifier:@"to sounds" sender:nil];
+    }else if(indexPath.section == 2)
     {
         UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         if(cell.selected){
@@ -252,4 +271,10 @@
     }
 }
 
+- (void)viewDidUnload {
+    [super viewDidUnload];
+}
+- (IBAction)onDone:(id)sender {
+    [self.parentViewController dismissModalViewControllerAnimated:YES];
+}
 @end

@@ -17,9 +17,7 @@
 		295F237514F2DD1400801A03 /* libxml2.2.7.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F237414F2DD1400801A03 /* libxml2.2.7.3.dylib */; };
 		295F237714F2DD2100801A03 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F237614F2DD2100801A03 /* libz.dylib */; };
 		2963C09B14F973B0004FD91C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2963C09814F973B0004FD91C /* InfoPlist.strings */; };
-		2963C14214F97703004FD91C /* SoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2963C14014F97703004FD91C /* SoundPlayer.m */; };
 		29660B6F14F97D4000A883D3 /* MapsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29660B6E14F97D3F00A883D3 /* MapsViewController.m */; };
-		2979B4D814F9405600558DB0 /* AlertSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2979B4D714F9405600558DB0 /* AlertSoundViewController.m */; };
 		2986DC0D14F2DAEA0031D1D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC0C14F2DAEA0031D1D4 /* UIKit.framework */; };
 		2986DC0F14F2DAEA0031D1D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC0E14F2DAEA0031D1D4 /* Foundation.framework */; };
 		2986DC1114F2DAEA0031D1D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC1014F2DAEA0031D1D4 /* CoreGraphics.framework */; };
@@ -56,7 +54,6 @@
 		299F19E514F2E4EC00571553 /* icon-gheble.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F19E014F2E4EC00571553 /* icon-gheble.png */; };
 		299F19E714F2E6D900571553 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F19E614F2E6D900571553 /* frame.png */; };
 		299F19ED14F2EC6C00571553 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19EB14F2EC6C00571553 /* LocationAnnotation.m */; };
-		299F19F014F2ED2B00571553 /* RemindersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19EE14F2ED2B00571553 /* RemindersTableViewController.m */; };
 		29E9F9EE14F9722000DF7A58 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */; };
 		29EF920714F9809100B4DED3 /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF91E814F9809100B4DED3 /* ASIWebPageRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29EF920814F9809100B4DED3 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF91EB14F9809100B4DED3 /* DetailTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -77,6 +74,12 @@
 		29EF921714F9809100B4DED3 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF920414F9809100B4DED3 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29EF921814F9809100B4DED3 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF920514F9809100B4DED3 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29EF921914F9809100B4DED3 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF920614F9809100B4DED3 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		29EF921C14F98AE000B4DED3 /* ReminderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF921B14F98AE000B4DED3 /* ReminderTableViewController.m */; };
+		29EF921F14F98FCA00B4DED3 /* SoundsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF921E14F98FCA00B4DED3 /* SoundsViewController.m */; };
+		29EF922214F9925100B4DED3 /* SoundPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF922114F9925100B4DED3 /* SoundPlayer.m */; };
+		29EF922514F9934900B4DED3 /* Default.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EF922314F9934900B4DED3 /* Default.wav */; };
+		29EF922614F9934900B4DED3 /* Azoon 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 29EF922414F9934900B4DED3 /* Azoon 1.wav */; };
+		29EF922814F9956100B4DED3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29EF922714F9956100B4DED3 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,12 +131,8 @@
 		2963C10914F97529004FD91C /* ASIS3Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3Request.m; sourceTree = "<group>"; };
 		2963C10A14F97529004FD91C /* ASIS3ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3ServiceRequest.h; sourceTree = "<group>"; };
 		2963C10B14F97529004FD91C /* ASIS3ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3ServiceRequest.m; sourceTree = "<group>"; };
-		2963C14014F97703004FD91C /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayer.m; sourceTree = "<group>"; };
-		2963C14114F97703004FD91C /* SoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
 		29660B6D14F97D3F00A883D3 /* MapsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapsViewController.h; sourceTree = "<group>"; };
 		29660B6E14F97D3F00A883D3 /* MapsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapsViewController.m; sourceTree = "<group>"; };
-		2979B4D614F9405600558DB0 /* AlertSoundViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertSoundViewController.h; sourceTree = "<group>"; };
-		2979B4D714F9405600558DB0 /* AlertSoundViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertSoundViewController.m; sourceTree = "<group>"; };
 		2986DC0814F2DAEA0031D1D4 /* Qonoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qonoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2986DC0C14F2DAEA0031D1D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2986DC0E14F2DAEA0031D1D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -245,8 +244,6 @@
 		299F19E614F2E6D900571553 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 		299F19EB14F2EC6C00571553 /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 		299F19EC14F2EC6C00571553 /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
-		299F19EE14F2ED2B00571553 /* RemindersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemindersTableViewController.m; sourceTree = "<group>"; };
-		299F19EF14F2ED2B00571553 /* RemindersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindersTableViewController.h; sourceTree = "<group>"; };
 		29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		29EF91DA14F9809100B4DED3 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Qonoot/frameworks/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		29EF91DB14F9809100B4DED3 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Qonoot/frameworks/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -291,6 +288,15 @@
 		29EF920414F9809100B4DED3 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = Qonoot/frameworks/ASIHTTPRequest.m; sourceTree = "<group>"; };
 		29EF920514F9809100B4DED3 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIInputStream.m; path = Qonoot/frameworks/ASIInputStream.m; sourceTree = "<group>"; };
 		29EF920614F9809100B4DED3 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = Qonoot/frameworks/ASINetworkQueue.m; sourceTree = "<group>"; };
+		29EF921A14F98AE000B4DED3 /* ReminderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderTableViewController.h; sourceTree = "<group>"; };
+		29EF921B14F98AE000B4DED3 /* ReminderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderTableViewController.m; sourceTree = "<group>"; };
+		29EF921D14F98FCA00B4DED3 /* SoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundsViewController.h; sourceTree = "<group>"; };
+		29EF921E14F98FCA00B4DED3 /* SoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundsViewController.m; sourceTree = "<group>"; };
+		29EF922014F9925100B4DED3 /* SoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundPlayer.h; path = Qonoot/SoundPlayer.h; sourceTree = "<group>"; };
+		29EF922114F9925100B4DED3 /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundPlayer.m; path = Qonoot/SoundPlayer.m; sourceTree = "<group>"; };
+		29EF922314F9934900B4DED3 /* Default.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Default.wav; sourceTree = "<group>"; };
+		29EF922414F9934900B4DED3 /* Azoon 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Azoon 1.wav"; sourceTree = "<group>"; };
+		29EF922714F9956100B4DED3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +304,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EF922814F9956100B4DED3 /* AVFoundation.framework in Frameworks */,
 				294C60D514F9485A002E68F2 /* AudioToolbox.framework in Frameworks */,
 				295F237714F2DD2100801A03 /* libz.dylib in Frameworks */,
 				295F237514F2DD1400801A03 /* libxml2.2.7.3.dylib in Frameworks */,
@@ -493,6 +500,11 @@
 		2986DBFD14F2DAE90031D1D4 = {
 			isa = PBXGroup;
 			children = (
+				29EF922714F9956100B4DED3 /* AVFoundation.framework */,
+				29EF922314F9934900B4DED3 /* Default.wav */,
+				29EF922414F9934900B4DED3 /* Azoon 1.wav */,
+				29EF922014F9925100B4DED3 /* SoundPlayer.h */,
+				29EF922114F9925100B4DED3 /* SoundPlayer.m */,
 				299F19DB14F2E4EC00571553 /* assets */,
 				2986DC1214F2DAEA0031D1D4 /* Qonoot */,
 				2986DC0B14F2DAEA0031D1D4 /* Frameworks */,
@@ -557,15 +569,13 @@
 		2986DC1214F2DAEA0031D1D4 /* Qonoot */ = {
 			isa = PBXGroup;
 			children = (
-				2963C14014F97703004FD91C /* SoundPlayer.m */,
-				2963C14114F97703004FD91C /* SoundPlayer.h */,
-				2979B4D614F9405600558DB0 /* AlertSoundViewController.h */,
-				2979B4D714F9405600558DB0 /* AlertSoundViewController.m */,
 				29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */,
+				29EF921D14F98FCA00B4DED3 /* SoundsViewController.h */,
+				29EF921E14F98FCA00B4DED3 /* SoundsViewController.m */,
 				29660B6D14F97D3F00A883D3 /* MapsViewController.h */,
 				29660B6E14F97D3F00A883D3 /* MapsViewController.m */,
-				299F19EF14F2ED2B00571553 /* RemindersTableViewController.h */,
-				299F19EE14F2ED2B00571553 /* RemindersTableViewController.m */,
+				29EF921A14F98AE000B4DED3 /* ReminderTableViewController.h */,
+				29EF921B14F98AE000B4DED3 /* ReminderTableViewController.m */,
 				299F19EC14F2EC6C00571553 /* LocationAnnotation.h */,
 				299F19EB14F2EC6C00571553 /* LocationAnnotation.m */,
 				299F193F14F2E28000571553 /* PrayTimesViewController.h */,
@@ -951,6 +961,8 @@
 				299CEA0314F339FA0080F2D3 /* arrow.png in Resources */,
 				29E9F9EE14F9722000DF7A58 /* iPhone.storyboard in Resources */,
 				2963C09B14F973B0004FD91C /* InfoPlist.strings in Resources */,
+				29EF922514F9934900B4DED3 /* Default.wav in Resources */,
+				29EF922614F9934900B4DED3 /* Azoon 1.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -988,9 +1000,6 @@
 				299F19D714F2E31000571553 /* LocalNotificationsManager.m in Sources */,
 				299F19DA14F2E35000571553 /* PrayNotification.m in Sources */,
 				299F19ED14F2EC6C00571553 /* LocationAnnotation.m in Sources */,
-				299F19F014F2ED2B00571553 /* RemindersTableViewController.m in Sources */,
-				2979B4D814F9405600558DB0 /* AlertSoundViewController.m in Sources */,
-				2963C14214F97703004FD91C /* SoundPlayer.m in Sources */,
 				29660B6F14F97D4000A883D3 /* MapsViewController.m in Sources */,
 				29EF920714F9809100B4DED3 /* ASIWebPageRequest.m in Sources */,
 				29EF920814F9809100B4DED3 /* DetailTableViewController.m in Sources */,
@@ -1011,6 +1020,9 @@
 				29EF921714F9809100B4DED3 /* ASIHTTPRequest.m in Sources */,
 				29EF921814F9809100B4DED3 /* ASIInputStream.m in Sources */,
 				29EF921914F9809100B4DED3 /* ASINetworkQueue.m in Sources */,
+				29EF921C14F98AE000B4DED3 /* ReminderTableViewController.m in Sources */,
+				29EF921F14F98FCA00B4DED3 /* SoundsViewController.m in Sources */,
+				29EF922214F9925100B4DED3 /* SoundPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

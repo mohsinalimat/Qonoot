@@ -30,7 +30,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="feH-8I-zbO" kind="modal" modalTransitionStyle="partialCurl" id="yv4-ir-s55"/>
+                                    <segue destination="88t-ap-zAq" kind="modal" modalTransitionStyle="flipHorizontal" id="yv4-ir-s55"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,9 +48,9 @@
         <scene sceneID="p3j-75-DK8">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7im-4z-gkO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="feH-8I-zbO" customClass="RemindersTableViewController" sceneMemberID="viewController">
+                <tableViewController id="feH-8I-zbO" customClass="ReminderTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="UKk-cy-eKs">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -78,10 +78,48 @@
                             <outlet property="delegate" destination="feH-8I-zbO" id="n0F-UJ-Y0A"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="O1h-Q6-1Th"/>
+                    <navigationItem key="navigationItem" title="Reminders" id="O1h-Q6-1Th">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="CVI-Rm-5Aq">
+                            <connections>
+                                <action selector="onDone:" destination="feH-8I-zbO" id="eiV-nr-lcp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="oPX-YQ-ShP" kind="push" identifier="to sounds" id="d3T-A0-5O3"/>
+                    </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2156" y="4"/>
+            <point key="canvasLocation" x="2682" y="4"/>
+        </scene>
+        <scene sceneID="Hz7-kd-s56">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUU-Q6-OOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="oPX-YQ-ShP" customClass="SoundsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HpV-qi-Ehc">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="my cell" id="mM6-9r-0oj">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oPX-YQ-ShP" id="IZ5-bZ-F5e"/>
+                            <outlet property="delegate" destination="oPX-YQ-ShP" id="6Ws-aC-qbD"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sounds" id="MjO-Wd-ddL"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="3138" y="4"/>
         </scene>
         <scene sceneID="ouV-Xj-M0H">
             <objects>
@@ -161,34 +199,29 @@
             </objects>
             <point key="canvasLocation" x="997" y="220"/>
         </scene>
+        <scene sceneID="ANn-Te-pHl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ren-Qq-e5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="88t-ap-zAq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mgC-ne-0Xf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="feH-8I-zbO" kind="relationship" relationship="rootViewController" id="Wxk-YB-T3c"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2156" y="4"/>
+        </scene>
     </scenes>
     <resources>
         <image name="compass.jpeg" width="400" height="400"/>
         <image name="gheble-tab.png" width="32" height="32"/>
         <image name="icon-gheble.png" width="29" height="80"/>
     </resources>
-    <classes>
-        <class className="MapsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="compassImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="compassView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="ghebleImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="mapView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="segmentBar" candidateClass="UISegmentedControl"/>
-            </relationships>
-        </class>
-        <class className="PrayTimesViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrayTimesViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="RemindersTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RemindersTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -16,5 +16,6 @@
                withPrayTime:(PrayTime*)prayTime;
 
 @property (strong,nonatomic) NSMutableArray *notifs;
+@property (strong,nonatomic) NSArray *sounds;
 
 @end

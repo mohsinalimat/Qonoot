@@ -11,6 +11,14 @@
 @implementation LocalNotificationsManager
 
 @synthesize notifs = _notifs;
+@synthesize sounds = _sounds;
+
+- (NSArray *)sounds
+{
+    if (!_sounds) _sounds = [NSArray arrayWithObjects:@"Default", @"Azoon 1", nil];
+    return _sounds;
+}
+
 
 - (NSMutableArray *)notifs
 {

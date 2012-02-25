@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RemindersTableViewController : UITableViewController
+@interface ReminderTableViewController : UITableViewController
 
 @property (nonatomic)bool showListings;
+- (IBAction)onDone:(id)sender;
 
 @end

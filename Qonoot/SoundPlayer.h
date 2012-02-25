@@ -1,12 +1,17 @@
 //
-//  GhonootViewController.h
-//  Ghonoot
+//  SoundPlayer.h
+//  Qonoot
 //
-//  Created by Sina on 1/21/12.
+//  Created by Sina on 2/25/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <AudioToolbox/AudioServices.h>
+#import <AVFoundation/AVFoundation.h>
 
-@interface SoundPlayer : NSObject
+@interface SoundPlayer : NSObject <AVAudioPlayerDelegate>
+
+-(void) playSound:(NSString*)soundName;
+
 @end
