@@ -17,5 +17,6 @@
 
 @property (strong,nonatomic) NSMutableArray *notifs;
 @property (strong,nonatomic) NSArray *sounds;
+@property (strong,nonatomic) NSString *sound;
 
 @end
