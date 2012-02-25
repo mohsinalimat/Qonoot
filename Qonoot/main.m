@@ -1,8 +1,8 @@
 //
 //  main.m
-//  Qonoot
+//  Ghonoot
 //
-//  Created by Sina on 2/20/12.
+//  Created by Sina on 1/21/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

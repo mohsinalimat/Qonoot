@@ -1,8 +1,8 @@
 //
-//  QonootAppDelegate.m
-//  Qonoot
+//  GhonootAppDelegate.m
+//  Ghonoot
 //
-//  Created by Sina on 2/20/12.
+//  Created by Sina on 1/21/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -14,8 +14,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
+	return YES;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -39,6 +38,18 @@
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification 
+{
+    NSString *time = [notification.userInfo objectForKey:@"time"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Prayer Time Reminder" 
+                                                    message:time
+                                                   delegate:self cancelButtonTitle:@"Ok"
+                                          otherButtonTitles:nil];
+    [alert show];
+    NSLog(@"Incoming notification in running app");
+    NSLog(@"Notification payload: %@", [notification.userInfo objectForKey:@"time"]);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application

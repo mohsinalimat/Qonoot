@@ -43,7 +43,7 @@ NSString *const kXMLReaderTextNodeKey = @"text";
 {
     if (self = [super init])
     {
-        errorPointer = error;
+        //errorPointer = error;
     }
     return self;
 }
