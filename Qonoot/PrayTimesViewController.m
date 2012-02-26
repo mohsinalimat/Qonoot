@@ -26,7 +26,7 @@
 
 - (LocalNotificationsManager *)lnm
 {
-    if (!_lnm) _lnm = [[LocalNotificationsManager alloc] init];
+    if (!_lnm) _lnm = [LocalNotificationsManager sharedManager];
     return _lnm;
 }
 

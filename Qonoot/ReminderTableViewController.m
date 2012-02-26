@@ -7,11 +7,30 @@
 //
 
 #import "ReminderTableViewController.h"
+#import "LocalNotificationsManager.h"
 
+@interface ReminderTableViewController()
+@property (nonatomic, strong) LocalNotificationsManager *lnm;
+@property (nonatomic, strong) NSMutableArray *allNotifications;
+@end
 
 @implementation ReminderTableViewController
 
 @synthesize showListings;
+@synthesize lnm = _lnm;
+@synthesize allNotifications = _allNotifications;
+
+- (LocalNotificationsManager *)lnm
+{
+    if (!_lnm) _lnm = [LocalNotificationsManager sharedManager];
+    return _lnm;
+}
+
+- (NSArray*)allNotifications
+{
+    _allNotifications = [NSMutableArray arrayWithArray:[self.lnm getAllNotifications]];
+    return _allNotifications;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,8 +55,15 @@
 {
     [super viewDidLoad];
     
-    showListings = false;
     self.tableView.allowsMultipleSelection = YES;
+    
+    if([self.allNotifications count] > 0)
+    {
+        showListings = YES;
+    }else
+    {
+        showListings = NO;
+    }
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -98,6 +124,21 @@
     }
 }
 
+-(BOOL)reminderForTimeExists:(NSString*)time
+{
+    for (int i = 0; i < [self.allNotifications count]; i++) 
+    {
+        UILocalNotification *notification = [self.allNotifications objectAtIndex:i];
+        NSString *round = [notification.userInfo valueForKey:@"round"];
+        if([round isEqualToString:time])
+        {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -150,21 +191,45 @@
                 cellTitle = @"All Prayer Times";
                 cellSubtitle = @"Reminds you for all times";
             }else if(indexPath.row == 1){
+                if([self reminderForTimeExists:@"fajr"])
+                {
+                    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                }
                 cellTitle = @"Fajr";
                 cellSubtitle = @"Only for Fajr prayer";
             }else if(indexPath.row == 2){
+                if([self reminderForTimeExists:@"sunrise"])
+                {
+                    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                }
                 cellTitle = @"Sunrise";
                 cellSubtitle = @"Only for Sunrise";
             }else if(indexPath.row == 3){
+                if([self reminderForTimeExists:@"zuhr"])
+                {
+                    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                }
                 cellTitle = @"Zuhr";
                 cellSubtitle = @"Only for Zuhr prayer";
             }else if(indexPath.row == 4){
+                if([self reminderForTimeExists:@"asr"])
+                {
+                    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                }
                 cellTitle = @"Asr";
                 cellSubtitle = @"Only for Asr prayer";
             }else if(indexPath.row == 5){
+                if([self reminderForTimeExists:@"maghrib"])
+                {
+                    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                }
                 cellTitle = @"Maghrib";
                 cellSubtitle = @"Only for Maghrib prayer";
             }else if(indexPath.row == 6){
+                if([self reminderForTimeExists:@"isha"])
+                {
+                    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+                }
                 cellTitle = @"Isha";
                 cellSubtitle = @"Only for Isha prayer";
             }
@@ -184,26 +249,13 @@
     }else
     {
         showListings = NO;
+        [self.lnm cancelAllNotifications];
     }
     
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:2] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 #pragma mark - Table view delegate
-
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(indexPath.section == 2)
-    {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-        if(cell.selected){
-            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-        }else{
-            [cell setAccessoryType:UITableViewCellAccessoryNone];
-        }
-    }
-}
-
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section == 1)
@@ -268,6 +320,38 @@
         }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:@"addLocalNotification" object:round];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 2)
+    {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        if(cell.selected){
+            [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        }else{
+            [cell setAccessoryType:UITableViewCellAccessoryNone];
+        }
+        
+        NSString *round = @"all";
+        if(indexPath.row == 0){
+            round = @"all";
+        }else if(indexPath.row == 1){
+            round = @"fajr";
+        }else if(indexPath.row == 2){
+            round = @"sunrise";
+        }else if(indexPath.row == 3){
+            round = @"zuhr";
+        }else if(indexPath.row == 4){
+            round = @"asr";
+        }else if(indexPath.row == 5){
+            round = @"maghrib";
+        }else if(indexPath.row == 6){
+            round = @"isha";
+        }
+        
+        [self.lnm cancelNotification:round];
     }
 }
 

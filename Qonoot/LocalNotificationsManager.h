@@ -11,12 +11,21 @@
 #import "PrayTime.h"
 
 @interface LocalNotificationsManager : NSObject
+{
+    NSString *sound;
+}
 
 -(void)addLocalNotification:(NSString*)round 
                withPrayTime:(PrayTime*)prayTime;
 
+-(NSArray*)getAllNotifications;
+-(void)cancelAllNotifications;
+-(void)cancelNotification:(NSString*)name;
+
++ (id)sharedManager;
+
 @property (strong,nonatomic) NSMutableArray *notifs;
 @property (strong,nonatomic) NSArray *sounds;
-@property (strong,nonatomic) NSString *sound;
+@property (nonatomic, retain) NSString *sound;
 
 @end

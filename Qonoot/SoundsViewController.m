@@ -22,7 +22,7 @@
 
 - (LocalNotificationsManager *)lnm
 {
-    if (!_lnm) _lnm = [[LocalNotificationsManager alloc] init];
+    if (!_lnm) _lnm = [LocalNotificationsManager sharedManager];
     return _lnm;
 }
 
@@ -123,7 +123,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    [cell setSelected: NO];
     cell.textLabel.text = [self.lnm.sounds objectAtIndex:indexPath.row];
+
+    if(self.lnm.sound == cell.textLabel.text)
+    {
+        [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    }
     
     // Configure the cell...
     
@@ -135,7 +141,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    [self.soundPlayer playSound:cell.textLabel.text];
+    NSString *sound = cell.textLabel.text;
+    
+    [self.soundPlayer playSound:sound];
+    [self.lnm setSound:sound];
 }
 
 @end

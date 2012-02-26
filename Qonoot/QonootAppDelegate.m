@@ -42,7 +42,7 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification 
 {
-    NSString *time = [notification.userInfo objectForKey:@"time"];
+    NSString *time = [notification.userInfo objectForKey:@"message"];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Prayer Time Reminder" 
                                                     message:time
                                                    delegate:self cancelButtonTitle:@"Ok"
