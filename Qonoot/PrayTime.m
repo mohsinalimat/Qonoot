@@ -25,6 +25,26 @@
     return self;
 }
 
+- (NSString*)convertTo24:(NSString*)original
+{
+    NSString* converted;
+    if ([original rangeOfString:@":"].location != NSNotFound) 
+    {
+        NSRange match = [original rangeOfString: @":"];
+
+        NSString *hourString = [original substringWithRange: NSMakeRange (0, match.location)];
+        NSString *minString = [original substringWithRange: NSMakeRange (match.location+1, [original length]-match.location-1)];
+        int hourInt = [hourString intValue];
+        
+        if(hourInt < 12)
+            hourInt = hourInt + 12;
+    
+        converted = [NSString stringWithFormat:@" %i%@%@", hourInt, @":", minString];
+    }
+    
+    return converted;
+}
+
 - (NSString *)dayIndex {
     return dayIndex;
 }
@@ -40,23 +60,23 @@
 - (NSString *)year {
     return year;
 }
-- (NSString *)asr {
-    return asr;
-}
 - (NSString *)fajr {
     return fajr;
-}
-- (NSString *)isha {
-    return isha;
-}
-- (NSString *)maghrib {
-    return maghrib;
 }
 - (NSString *)sunrise {
     return sunrise;
 }
 - (NSString *)zuhr {
     return zuhr;
+}
+- (NSString *)asr {
+    return asr;
+}
+- (NSString *)maghrib {
+    return maghrib;
+}
+- (NSString *)isha {
+    return isha;
 }
 
 - (void)setDayIndex:(NSString *)input {
@@ -74,20 +94,9 @@
 - (void)setYear:(NSString *)input {
     year = input;
 }
-- (void)setAsr:(NSString *)input {
-    asr = input;
-}
 - (void)setFajr:(NSString *)input
 {
     fajr = input;
-}
-- (void)setIsha:(NSString *)input
-{
-    isha = input;
-}
-- (void)setMaghrib:(NSString *)input
-{
-    maghrib = input;
 }
 - (void)setSunrise:(NSString *)input
 {
@@ -95,7 +104,18 @@
 }
 - (void)setZuhr:(NSString *)input
 {
-    zuhr = input;
+    zuhr = [self convertTo24:input];
+}
+- (void)setAsr:(NSString *)input {
+    asr = [self convertTo24:input];
+}
+- (void)setMaghrib:(NSString *)input
+{
+    maghrib = [self convertTo24:input];
+}
+- (void)setIsha:(NSString *)input
+{
+    isha = [self convertTo24:input];
 }
 
 /* This code has been added to support encoding and decoding my objecst */

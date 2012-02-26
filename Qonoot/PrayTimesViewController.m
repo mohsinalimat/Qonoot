@@ -74,7 +74,6 @@
     NSURL *url = [NSURL URLWithString:urlString];
     //NSLog(@"show:%@", url);
     
-    
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     
     [request setDidFinishSelector:@selector(requestCompleted:)];

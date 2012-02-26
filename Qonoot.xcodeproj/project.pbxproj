@@ -292,8 +292,8 @@
 		29EF921B14F98AE000B4DED3 /* ReminderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderTableViewController.m; sourceTree = "<group>"; };
 		29EF921D14F98FCA00B4DED3 /* SoundsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundsViewController.h; sourceTree = "<group>"; };
 		29EF921E14F98FCA00B4DED3 /* SoundsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundsViewController.m; sourceTree = "<group>"; };
-		29EF922014F9925100B4DED3 /* SoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundPlayer.h; path = Qonoot/SoundPlayer.h; sourceTree = "<group>"; };
-		29EF922114F9925100B4DED3 /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SoundPlayer.m; path = Qonoot/SoundPlayer.m; sourceTree = "<group>"; };
+		29EF922014F9925100B4DED3 /* SoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundPlayer.h; sourceTree = "<group>"; };
+		29EF922114F9925100B4DED3 /* SoundPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundPlayer.m; sourceTree = "<group>"; };
 		29EF922314F9934900B4DED3 /* Default.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Default.wav; sourceTree = "<group>"; };
 		29EF922414F9934900B4DED3 /* Azoon 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Azoon 1.wav"; sourceTree = "<group>"; };
 		29EF922714F9956100B4DED3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -500,11 +500,8 @@
 		2986DBFD14F2DAE90031D1D4 = {
 			isa = PBXGroup;
 			children = (
-				29EF922714F9956100B4DED3 /* AVFoundation.framework */,
 				29EF922314F9934900B4DED3 /* Default.wav */,
 				29EF922414F9934900B4DED3 /* Azoon 1.wav */,
-				29EF922014F9925100B4DED3 /* SoundPlayer.h */,
-				29EF922114F9925100B4DED3 /* SoundPlayer.m */,
 				299F19DB14F2E4EC00571553 /* assets */,
 				2986DC1214F2DAEA0031D1D4 /* Qonoot */,
 				2986DC0B14F2DAEA0031D1D4 /* Frameworks */,
@@ -523,6 +520,7 @@
 		2986DC0B14F2DAEA0031D1D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29EF922714F9956100B4DED3 /* AVFoundation.framework */,
 				29EF91DA14F9809100B4DED3 /* ASIAuthenticationDialog.h */,
 				29EF91DB14F9809100B4DED3 /* ASICacheDelegate.h */,
 				29EF91DC14F9809100B4DED3 /* ASIDataCompressor.h */,
@@ -569,6 +567,8 @@
 		2986DC1214F2DAEA0031D1D4 /* Qonoot */ = {
 			isa = PBXGroup;
 			children = (
+				29EF922014F9925100B4DED3 /* SoundPlayer.h */,
+				29EF922114F9925100B4DED3 /* SoundPlayer.m */,
 				29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */,
 				29EF921D14F98FCA00B4DED3 /* SoundsViewController.h */,
 				29EF921E14F98FCA00B4DED3 /* SoundsViewController.m */,

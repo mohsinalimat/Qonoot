@@ -105,11 +105,11 @@ static LocalNotificationsManager *sharedMyManager = nil;
     
     [comps setTimeZone:[NSTimeZone localTimeZone]];
     
-    //NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    //NSDate *dateToFire = [cal dateFromComponents:comps];
+    NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDate *dateToFire = [cal dateFromComponents:comps];
     
-    NSDate *date = [NSDate date];
-    NSDate *dateToFire = [date dateByAddingTimeInterval:10];
+    //NSDate *date = [NSDate date];
+    //NSDate *dateToFire = [date dateByAddingTimeInterval:10];
     
     NSLog(@"dateToFire :%@", dateToFire);
     
