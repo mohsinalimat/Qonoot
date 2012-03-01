@@ -16,6 +16,7 @@
 @implementation PrayTimesViewController
 
 @synthesize prayerTimes = _prayerTimes;
+@synthesize spinner;
 @synthesize scrollView;
 @synthesize locationManager;
 @synthesize longtitude;
@@ -39,8 +40,9 @@
     return self;
 }
 
--(void)callWebService{
-    
+-(void)callWebService
+{
+    [spinner startAnimating];
     //http://www.islamicfinder.org/prayer_service.php?country=united_kingdom&city=london&state=0&zipcode=&latitude=40.7500&longitude=-73.9967&timezone=-5.0&HanfiShafi=1&pmethod=5&fajrTwilight1=&fajrTwilight2=&ishaTwilight=0&ishaInterval=0&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml
     
     //http://www.islamicfinder.org/prayer_service.php?country=united_kingdom&city=london&state=0&zipcode=&latitude=40.75&longtitude=-73.9967&timezone=-5&HanfiShafi=1&pmethod=5&fajrTwilight1=&fajrTwilight2=&ishaTwilight=0&ishaInterval=0&dhuhrInterval=1&maghribInterval=1&dayLight=1&simpleFormat=xml
@@ -102,6 +104,8 @@
 
 - (void)requestCompleted:(ASIHTTPRequest *)request
 {
+    [spinner stopAnimating];
+    
     NSString *responseString = [request responseString];
     //NSLog(@"Response: %@", responseString);
     
@@ -220,6 +224,8 @@
 {
     [super viewDidLoad];
     
+    [spinner stopAnimating];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addLocalNotification:) name:@"addLocalNotification" object:nil];
     
     [scrollView setContentSize:CGSizeMake(0, 100)];
@@ -232,7 +238,7 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.delegate = self;
     self.locationManager.headingOrientation = CLDeviceOrientationFaceUp;
-    [self.locationManager startUpdatingLocation];
+    [self.locationManager startUpdatingLocation];    
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -242,6 +248,7 @@
 
 - (void)viewDidUnload {
     [self setScrollView:nil];
+    [self setSpinner:nil];
     [super viewDidUnload];
 }
 @end

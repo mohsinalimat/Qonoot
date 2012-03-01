@@ -108,34 +108,37 @@ static LocalNotificationsManager *sharedMyManager = nil;
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDate *dateToFire = [cal dateFromComponents:comps];
     
+    NSDate *now = [NSDate date];
+    NSComparisonResult compare = [dateToFire compare:now];
+    
     //NSDate *date = [NSDate date];
     //NSDate *dateToFire = [date dateByAddingTimeInterval:10];
     
-    NSLog(@"dateToFire :%@", dateToFire);
-    
- 	[localNotification setFireDate:dateToFire];
-    [localNotification setTimeZone:[NSTimeZone defaultTimeZone]];
-    
-    NSString *message = [NSString stringWithFormat:@"%@%@%@", 
-                         newNotif.round,
-                         @" ",
-                         newNotif.time];
-    NSMutableDictionary *data = [NSMutableDictionary dictionaryWithObject:message forKey:@"message"];
-    [data setValue:newNotif.round forKey:@"round"];
-    
-    [localNotification setUserInfo:data];
-    
-    [localNotification setAlertBody:@"Prayer Time Reminder" ];
-    //[localNotification setAlertAction:@"Open"];
-    //[localNotification setHasAction:YES];
-    
-    //[localNotification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber] + 1];
-    //[localNotification setSoundName:UILocalNotificationDefaultSoundName];
-    [localNotification setSoundName:[NSString stringWithFormat:@"%@%@", self.sound, @".wav"]];
-    
-    NSLog(@"Sound name: %@", localNotification.soundName);
-    
-	[[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    if(compare == 1)
+    {
+        NSLog(@"dateToFire :%@", dateToFire);
+        
+        [localNotification setFireDate:dateToFire];
+        [localNotification setTimeZone:[NSTimeZone defaultTimeZone]];
+        
+        NSString *message = [NSString stringWithFormat:@"%@%@%@", 
+                             newNotif.round,
+                             @" ",
+                             newNotif.time];
+        NSMutableDictionary *data = [NSMutableDictionary dictionaryWithObject:message forKey:@"message"];
+        [data setValue:newNotif.round forKey:@"round"];
+        
+        [localNotification setUserInfo:data];
+        
+        [localNotification setAlertBody:@"Prayer Time Reminder" ];
+        //[localNotification setAlertAction:@"Open"];
+        //[localNotification setHasAction:YES];
+        
+        //[localNotification setApplicationIconBadgeNumber:[[UIApplication sharedApplication] applicationIconBadgeNumber] + 1];
+        [localNotification setSoundName:[NSString stringWithFormat:@"%@%@", self.sound, @".wav"]];
+        
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    }    
 }
 
 -(NSArray*)getAllNotifications
