@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.0" toolsVersion="1938" systemVersion="11D50b" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="rXh-ng-yHC">
+    <dependencies>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="933"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="mN8-z7-8sF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLz-rE-iNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="ghV-Ao-31R" customClass="PrayTimesViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sw6-aC-GDI">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Zze-Ge-KdG">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="955"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="wKQ-Pb-oUv">
+                                <rect key="frame" x="366" y="459" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Mxh-XF-sgL"/>
+                    <connections>
+                        <outlet property="scrollView" destination="Zze-Ge-KdG" id="uvX-Mg-I4O"/>
+                        <outlet property="spinner" destination="wKQ-Pb-oUv" id="KCT-eJ-5Uq"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1407" y="-587"/>
+        </scene>
+        <scene sceneID="XmR-Gd-r9f">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLK-dE-Cpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController id="rXh-ng-yHC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="See-vP-H8m">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ghV-Ao-31R" kind="relationship" relationship="viewControllers" id="Jnj-lf-HPz"/>
+                        <segue destination="jeN-aK-j23" kind="relationship" relationship="viewControllers" id="8tb-r0-nVz"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="177" y="-95"/>
+        </scene>
+        <scene sceneID="vPM-d6-vbC">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="meq-bY-HBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="jeN-aK-j23" customClass="MapsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TvD-Lp-lMS">
+                        <rect key="frame" x="0.0" y="20" width="768" height="955"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="DuJ-21-kbr">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="956"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="compass.jpeg" id="kJm-lb-UsU">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="956"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="top" image="icon-gheble.png" id="nG1-5i-zQj">
+                                        <rect key="frame" x="304" y="398" width="160" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.26711989730000002" green="0.29911308279999999" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" id="OXu-U3-smu">
+                                        <rect key="frame" x="0.0" y="11" width="768" height="945"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="dVy-YC-u8B">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="945"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </mapView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bezeled" selectedSegmentIndex="0" id="95g-9d-fnw">
+                                <rect key="frame" x="184" y="20" width="400" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Compass"/>
+                                    <segment title="Map"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Gheble" id="9wr-5k-MQW"/>
+                    <connections>
+                        <outlet property="compassImage" destination="kJm-lb-UsU" id="8Ta-JE-Nzy"/>
+                        <outlet property="compassView" destination="DuJ-21-kbr" id="rT6-et-Wrr"/>
+                        <outlet property="ghebleImage" destination="nG1-5i-zQj" id="Slg-Mc-kOY"/>
+                        <outlet property="mapView" destination="OXu-U3-smu" id="X5y-jV-V5o"/>
+                        <outlet property="segmentBar" destination="95g-9d-fnw" id="wDp-PO-nbp"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1401" y="624"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compass.jpeg" width="400" height="400"/>
+        <image name="icon-gheble.png" width="29" height="80"/>
+    </resources>
+    <classes>
+        <class className="MapsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="compassImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="compassView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="ghebleImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="map" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="mapView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="segmentBar" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
+        <class className="PrayTimesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PrayTimesViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="spinner" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

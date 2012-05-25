@@ -169,12 +169,11 @@
                                     <segment title="Compass"/>
                                     <segment title="Map"/>
                                 </segments>
-                                <color key="tintColor" red="0.0" green="0.54347826089999995" blue="0.17640304809999999" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Qibla" image="gheble-tab.png" id="IXz-mR-dgE"/>
+                    <tabBarItem key="tabBarItem" title="Gheble" image="gheble-tab.png" id="IXz-mR-dgE"/>
                     <connections>
                         <outlet property="compassImage" destination="8EG-mn-aZ4" id="224-Ue-vbz"/>
                         <outlet property="compassView" destination="Y1G-aA-jvk" id="Mfk-QA-9sw"/>

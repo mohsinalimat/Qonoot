@@ -35,24 +35,45 @@
 
 - (void)drawRect:(CGRect)rect
 {
+    int frameSize;
+    int frameHeight;
+    int fontSize_day;
+    int fontSize_date;
+    int fontSize_round;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        frameSize = 768;
+        frameHeight = 955;
+        fontSize_day = 35;
+        fontSize_date = 28;
+        fontSize_round = 22;
+    }
+    else {
+        frameSize = 320;
+        frameHeight = 420;
+        fontSize_day = 25;
+        fontSize_date = 18;
+        fontSize_round = 12;
+    }
+    
     UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"frame.png"]];
     [self addSubview:background];
-    CGRect frame = CGRectMake(0, 0, 320, 420);
+    CGRect frame = CGRectMake(0, 0, frameSize, frameHeight);
     background.frame = frame;
     
     PrayTime *prayTime = [self.dataSource myData:self];
     
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, 320, 40)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 120, frameSize, 40)];
     label.backgroundColor = [UIColor clearColor];
     label.textColor = [UIColor whiteColor];
     label.textAlignment = UITextAlignmentCenter;
     label.text = [NSString stringWithFormat:@"%@", prayTime.weekDay];
-    label.font = [UIFont boldSystemFontOfSize:25];
+    label.font = [UIFont boldSystemFontOfSize:fontSize_day];
     [self addSubview:label];
     
     
-    UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, 320, 20)];
+    UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(0, 160, frameSize, 20)];
     date.backgroundColor = [UIColor clearColor];
     date.textColor = [UIColor whiteColor];
     date.textAlignment = UITextAlignmentCenter;
@@ -62,10 +83,10 @@
                  prayTime.day, 
                  @"/", 
                  prayTime.year];
-    date.font = [UIFont boldSystemFontOfSize:18];
+    date.font = [UIFont boldSystemFontOfSize:fontSize_date];
     [self addSubview:date];
     
-    UILabel *fajr = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, 320, 20)];
+    UILabel *fajr = [[UILabel alloc] initWithFrame:CGRectMake(0, 200, frameSize, 20)];
     fajr.backgroundColor = [UIColor clearColor];
     fajr.textColor = [UIColor whiteColor];
     fajr.textAlignment = UITextAlignmentCenter;
@@ -73,44 +94,44 @@
     fajr.font = [UIFont boldSystemFontOfSize:12];
     [self addSubview:fajr];
     
-    UILabel *sunrise = [[UILabel alloc] initWithFrame:CGRectMake(0, 215, 320, 20)];
+    UILabel *sunrise = [[UILabel alloc] initWithFrame:CGRectMake(0, 215, frameSize, 20)];
     sunrise.backgroundColor = [UIColor clearColor];
     sunrise.textColor = [UIColor whiteColor];
     sunrise.textAlignment = UITextAlignmentCenter;
     sunrise.text = [NSString stringWithFormat:@"Sunrise %@", prayTime.sunrise];
-    sunrise.font = [UIFont boldSystemFontOfSize:12];
+    sunrise.font = [UIFont boldSystemFontOfSize:fontSize_round];
     [self addSubview:sunrise];
     
-    UILabel *zuhr = [[UILabel alloc] initWithFrame:CGRectMake(0, 230, 320, 20)];
+    UILabel *zuhr = [[UILabel alloc] initWithFrame:CGRectMake(0, 230, frameSize, 20)];
     zuhr.backgroundColor = [UIColor clearColor];
     zuhr.textColor = [UIColor whiteColor];
     zuhr.textAlignment = UITextAlignmentCenter;
     zuhr.text = [NSString stringWithFormat:@"zuhr %@", prayTime.zuhr];
-    zuhr.font = [UIFont boldSystemFontOfSize:12];
+    zuhr.font = [UIFont boldSystemFontOfSize:fontSize_round];
     [self addSubview:zuhr];
     
-    UILabel *asr = [[UILabel alloc] initWithFrame:CGRectMake(0, 245, 320, 20)];
+    UILabel *asr = [[UILabel alloc] initWithFrame:CGRectMake(0, 245, frameSize, 20)];
     asr.backgroundColor = [UIColor clearColor];
     asr.textColor = [UIColor whiteColor];
     asr.textAlignment = UITextAlignmentCenter;
     asr.text = [NSString stringWithFormat:@"Asr %@", prayTime.asr];
-    asr.font = [UIFont boldSystemFontOfSize:12];
+    asr.font = [UIFont boldSystemFontOfSize:fontSize_round];
     [self addSubview:asr];
     
-    UILabel *maghrib = [[UILabel alloc] initWithFrame:CGRectMake(0, 260, 320, 20)];
+    UILabel *maghrib = [[UILabel alloc] initWithFrame:CGRectMake(0, 260, frameSize, 20)];
     maghrib.backgroundColor = [UIColor clearColor];
     maghrib.textColor = [UIColor whiteColor];
     maghrib.textAlignment = UITextAlignmentCenter;
     maghrib.text = [NSString stringWithFormat:@"Maghrib %@", prayTime.maghrib];
-    maghrib.font = [UIFont boldSystemFontOfSize:12];
+    maghrib.font = [UIFont boldSystemFontOfSize:fontSize_round];
     [self addSubview:maghrib];
     
-    UILabel *isha = [[UILabel alloc] initWithFrame:CGRectMake(0, 275, 320, 20)];
+    UILabel *isha = [[UILabel alloc] initWithFrame:CGRectMake(0, 275, frameSize, 20)];
     isha.backgroundColor = [UIColor clearColor];
     isha.textColor = [UIColor whiteColor];
     isha.textAlignment = UITextAlignmentCenter;
     isha.text = [NSString stringWithFormat:@"Isha %@", prayTime.isha];
-    isha.font = [UIFont boldSystemFontOfSize:12];
+    isha.font = [UIFont boldSystemFontOfSize:fontSize_round];
     [self addSubview:isha];
 }
 

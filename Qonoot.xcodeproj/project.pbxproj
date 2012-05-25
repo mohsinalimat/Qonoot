@@ -23,7 +23,6 @@
 		2986DC1114F2DAEA0031D1D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC1014F2DAEA0031D1D4 /* CoreGraphics.framework */; };
 		2986DC1914F2DAEA0031D1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2986DC1814F2DAEA0031D1D4 /* main.m */; };
 		2986DC1D14F2DAEA0031D1D4 /* QonootAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */; };
-		299CEA0314F339FA0080F2D3 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 299CEA0214F339FA0080F2D3 /* arrow.png */; };
 		299F194014F2E28000571553 /* PrayTimesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F193E14F2E28000571553 /* PrayTimesViewController.m */; };
 		299F19BA14F2E29400571553 /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F197214F2E29400571553 /* ASICloudFilesCDNRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		299F19BB14F2E29400571553 /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F197414F2E29400571553 /* ASICloudFilesContainer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -54,6 +53,9 @@
 		299F19E514F2E4EC00571553 /* icon-gheble.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F19E014F2E4EC00571553 /* icon-gheble.png */; };
 		299F19E714F2E6D900571553 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F19E614F2E6D900571553 /* frame.png */; };
 		299F19ED14F2EC6C00571553 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19EB14F2EC6C00571553 /* LocationAnnotation.m */; };
+		29D73BBA156EF74B00FFFD3E /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D73BB8156EF74B00FFFD3E /* TestViewController.m */; };
+		29D73BBB156EF74B00FFFD3E /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D73BB9156EF74B00FFFD3E /* TestViewController.xib */; };
+		29DF1D241502EA8700AD439E /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29DF1D231502EA8700AD439E /* iPad.storyboard */; };
 		29E9F9EE14F9722000DF7A58 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */; };
 		29EF920714F9809100B4DED3 /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF91E814F9809100B4DED3 /* ASIWebPageRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29EF920814F9809100B4DED3 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF91EB14F9809100B4DED3 /* DetailTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -142,7 +144,6 @@
 		2986DC1A14F2DAEA0031D1D4 /* Qonoot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Qonoot-Prefix.pch"; sourceTree = "<group>"; };
 		2986DC1B14F2DAEA0031D1D4 /* QonootAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QonootAppDelegate.h; sourceTree = "<group>"; };
 		2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QonootAppDelegate.m; sourceTree = "<group>"; };
-		299CEA0214F339FA0080F2D3 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow.png; path = ../../../../Desktop/arrow.png; sourceTree = "<group>"; };
 		299F193E14F2E28000571553 /* PrayTimesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayTimesViewController.m; sourceTree = "<group>"; };
 		299F193F14F2E28000571553 /* PrayTimesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayTimesViewController.h; sourceTree = "<group>"; };
 		299F194314F2E29400571553 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -244,6 +245,10 @@
 		299F19E614F2E6D900571553 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 		299F19EB14F2EC6C00571553 /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 		299F19EC14F2EC6C00571553 /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
+		29D73BB7156EF74B00FFFD3E /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = Qonoot/TestViewController.h; sourceTree = "<group>"; };
+		29D73BB8156EF74B00FFFD3E /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = Qonoot/TestViewController.m; sourceTree = "<group>"; };
+		29D73BB9156EF74B00FFFD3E /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestViewController.xib; path = Qonoot/TestViewController.xib; sourceTree = "<group>"; };
+		29DF1D231502EA8700AD439E /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPad.storyboard; path = Qonoot/iPad.storyboard; sourceTree = "<group>"; };
 		29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		29EF91DA14F9809100B4DED3 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Qonoot/frameworks/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		29EF91DB14F9809100B4DED3 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Qonoot/frameworks/ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -500,6 +505,10 @@
 		2986DBFD14F2DAE90031D1D4 = {
 			isa = PBXGroup;
 			children = (
+				29D73BB7156EF74B00FFFD3E /* TestViewController.h */,
+				29D73BB8156EF74B00FFFD3E /* TestViewController.m */,
+				29D73BB9156EF74B00FFFD3E /* TestViewController.xib */,
+				29DF1D231502EA8700AD439E /* iPad.storyboard */,
 				29EF922314F9934900B4DED3 /* Default.wav */,
 				29EF922414F9934900B4DED3 /* Azoon 1.wav */,
 				299F19DB14F2E4EC00571553 /* assets */,
@@ -520,6 +529,7 @@
 		2986DC0B14F2DAEA0031D1D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				299F194214F2E29400571553 /* libraries */,
 				29EF922714F9956100B4DED3 /* AVFoundation.framework */,
 				29EF91DA14F9809100B4DED3 /* ASIAuthenticationDialog.h */,
 				29EF91DB14F9809100B4DED3 /* ASICacheDelegate.h */,
@@ -592,8 +602,6 @@
 				299F19D214F2E2FD00571553 /* XMLReader.m */,
 				299F19D614F2E31000571553 /* LocalNotificationsManager.h */,
 				299F19D514F2E31000571553 /* LocalNotificationsManager.m */,
-				299F194214F2E29400571553 /* libraries */,
-				299CEA0214F339FA0080F2D3 /* arrow.png */,
 				2986DC1314F2DAEA0031D1D4 /* Supporting Files */,
 			);
 			path = Qonoot;
@@ -642,7 +650,7 @@
 				299F199914F2E29400571553 /* S3 */,
 			);
 			name = libraries;
-			path = frameworks;
+			path = Qonoot/frameworks;
 			sourceTree = "<group>";
 		};
 		299F195714F2E29400571553 /* ASIWebPageRequest */ = {
@@ -958,11 +966,12 @@
 				299F19E414F2E4EC00571553 /* icon-57.png in Resources */,
 				299F19E514F2E4EC00571553 /* icon-gheble.png in Resources */,
 				299F19E714F2E6D900571553 /* frame.png in Resources */,
-				299CEA0314F339FA0080F2D3 /* arrow.png in Resources */,
 				29E9F9EE14F9722000DF7A58 /* iPhone.storyboard in Resources */,
 				2963C09B14F973B0004FD91C /* InfoPlist.strings in Resources */,
 				29EF922514F9934900B4DED3 /* Default.wav in Resources */,
 				29EF922614F9934900B4DED3 /* Azoon 1.wav in Resources */,
+				29DF1D241502EA8700AD439E /* iPad.storyboard in Resources */,
+				29D73BBB156EF74B00FFFD3E /* TestViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1023,6 +1032,7 @@
 				29EF921C14F98AE000B4DED3 /* ReminderTableViewController.m in Sources */,
 				29EF921F14F98FCA00B4DED3 /* SoundsViewController.m in Sources */,
 				29EF922214F9925100B4DED3 /* SoundPlayer.m in Sources */,
+				29D73BBA156EF74B00FFFD3E /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

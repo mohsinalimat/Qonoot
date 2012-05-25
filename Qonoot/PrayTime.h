@@ -27,12 +27,12 @@
 - (NSString *)day;
 - (NSString *)month;
 - (NSString *)year;
-- (NSString *)asr;
-- (NSString *)fajr;
-- (NSString *)isha;
-- (NSString *)maghrib;
 - (NSString *)sunrise;
 - (NSString *)zuhr;
+- (NSString *)asr;
+- (NSString *)fajr;
+- (NSString *)maghrib;
+- (NSString *)isha;
 
 - (id)init;
 

@@ -89,13 +89,34 @@
 {
     if ([num intValue] < [_prayerTimes count])
     {
-        PrayDayView *item = [[PrayDayView alloc] initWithFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 20)];
+        int frameSize;
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            frameSize = 768;
+        }
+        else {
+            frameSize = 320;
+        }
+        /*
+        PrayDayView *item = [[PrayDayView alloc] initWithFrame:CGRectMake(scrollView.contentSize.width, 0, frameSize, 20)];
         item.dayID = num;
         item.backgroundColor = [UIColor clearColor];
         [item setNeedsDisplay];
         item.dataSource = self;
         [scrollView addSubview:item];
         [scrollView setContentSize:CGSizeMake(item.frame.origin.x + item.frame.size.width, 100)];
+         */
+        
+        //TestViewController *item = [[TestViewController alloc] init];
+        //[scrollView addSubview:item.view];
+        //[scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, 100)];
+        
+        TestViewController *item2 = [[TestViewController alloc] init];
+        item2.dayID = num;
+        item2.dataSource = self;
+        
+        [item2.view setFrame:CGRectMake(scrollView.contentSize.width, 0, frameSize, 0)];
+        [scrollView addSubview:item2.view];
+        [scrollView setContentSize:CGSizeMake(item2.view.frame.origin.x + item2.view.frame.size.width, 100)];
         
         int value = [num intValue];
         num = [NSNumber numberWithInt:value + 1];
@@ -210,9 +231,17 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)sv
 {
+    int frameSize;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        frameSize = 768;
+    }
+    else {
+        frameSize = 320;
+    }
+    
     CGSize size = scrollView.contentSize;
     CGPoint position = scrollView.contentOffset;
-    if(position.x == (size.width-320))
+    if(position.x == (size.width-frameSize))
     {
         [self createButton];
     }
@@ -238,8 +267,10 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.delegate = self;
     self.locationManager.headingOrientation = CLDeviceOrientationFaceUp;
-    [self.locationManager startUpdatingLocation];    
+    [self.locationManager startUpdatingLocation];
+
 }
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations

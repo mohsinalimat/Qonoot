@@ -15,6 +15,7 @@
 #import "CLLocation+measuring.h"
 #import "NSString+HTML.h"
 #import "LocalNotificationsManager.h"
+#import "TestViewController.h"
 
 @interface PrayTimesViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate>
 {
