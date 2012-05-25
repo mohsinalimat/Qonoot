@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PrayTime.h"
 
-@class TestViewController;
+@class PrayItemViewController;
 
 @protocol PrayDayDataSource
-- (PrayTime*) myData:(TestViewController *)sender;
+- (PrayTime*) myData:(PrayItemViewController *)sender;
 @end
 
-@interface TestViewController : UIViewController
+@interface PrayItemViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *dayOftheWeekLabel;
 @property (nonatomic, strong) NSNumber *dayID;
 @property int num;
@@ -26,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *asrLabel;
 @property (weak, nonatomic) IBOutlet UILabel *maghribLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ishaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end

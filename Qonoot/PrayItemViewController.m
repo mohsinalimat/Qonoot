@@ -6,19 +6,20 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "TestViewController.h"
+#import "PrayItemViewController.h"
 
-@interface TestViewController ()
+@interface PrayItemViewController ()
 
 @end
 
-@implementation TestViewController
+@implementation PrayItemViewController
 
 @synthesize dayOftheWeekLabel;
 @synthesize dataSource = _dataSource;
 @synthesize fajrLabel;
 @synthesize zuhrLabel;
 @synthesize ishaLabel;
+@synthesize dateLabel;
 @synthesize maghribLabel;
 @synthesize sunriseLabel;
 @synthesize asrLabel;
@@ -47,6 +48,12 @@
     asrLabel.text = [NSString stringWithFormat:@"Asr %@", prayTime.asr];
     maghribLabel.text = [NSString stringWithFormat:@"Maghrib %@", prayTime.maghrib];
     ishaLabel.text = [NSString stringWithFormat:@"Isha %@", prayTime.isha];
+    dateLabel.text = [NSString stringWithFormat:@"%@%@%@%@%@", 
+                 prayTime.month, 
+                 @"/", 
+                 prayTime.day, 
+                 @"/", 
+                 prayTime.year];
 }
 
 - (void)viewDidUnload
@@ -58,6 +65,7 @@
     [self setMaghribLabel:nil];
     [self setSunriseLabel:nil];
     [self setAsrLabel:nil];
+    [self setDateLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -42,8 +42,6 @@
 		299F19C914F2E29400571553 /* ASIS3ObjectRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19A214F2E29400571553 /* ASIS3ObjectRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		299F19CA14F2E29400571553 /* ASIS3Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19A414F2E29400571553 /* ASIS3Request.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		299F19CB14F2E29400571553 /* ASIS3ServiceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19A614F2E29400571553 /* ASIS3ServiceRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		299F19CE14F2E2D300571553 /* PrayDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19CC14F2E2D300571553 /* PrayDayView.m */; };
-		299F19D114F2E2E500571553 /* PrayTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19CF14F2E2E500571553 /* PrayTime.m */; };
 		299F19D414F2E2FD00571553 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19D214F2E2FD00571553 /* XMLReader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		299F19D714F2E31000571553 /* LocalNotificationsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19D514F2E31000571553 /* LocalNotificationsManager.m */; };
 		299F19DA14F2E35000571553 /* PrayNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19D814F2E35000571553 /* PrayNotification.m */; };
@@ -53,8 +51,9 @@
 		299F19E514F2E4EC00571553 /* icon-gheble.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F19E014F2E4EC00571553 /* icon-gheble.png */; };
 		299F19E714F2E6D900571553 /* frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 299F19E614F2E6D900571553 /* frame.png */; };
 		299F19ED14F2EC6C00571553 /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F19EB14F2EC6C00571553 /* LocationAnnotation.m */; };
-		29D73BBA156EF74B00FFFD3E /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D73BB8156EF74B00FFFD3E /* TestViewController.m */; };
-		29D73BBB156EF74B00FFFD3E /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D73BB9156EF74B00FFFD3E /* TestViewController.xib */; };
+		29D73BBA156EF74B00FFFD3E /* PrayItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D73BB8156EF74B00FFFD3E /* PrayItemViewController.m */; };
+		29D73BBB156EF74B00FFFD3E /* PrayItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */; };
+		29D73BBE156F254B00FFFD3E /* PrayTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D73BBD156F254B00FFFD3E /* PrayTime.m */; };
 		29DF1D241502EA8700AD439E /* iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29DF1D231502EA8700AD439E /* iPad.storyboard */; };
 		29E9F9EE14F9722000DF7A58 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */; };
 		29EF920714F9809100B4DED3 /* ASIWebPageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EF91E814F9809100B4DED3 /* ASIWebPageRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -227,10 +226,6 @@
 		299F19A414F2E29400571553 /* ASIS3Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3Request.m; sourceTree = "<group>"; };
 		299F19A514F2E29400571553 /* ASIS3ServiceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIS3ServiceRequest.h; sourceTree = "<group>"; };
 		299F19A614F2E29400571553 /* ASIS3ServiceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIS3ServiceRequest.m; sourceTree = "<group>"; };
-		299F19CC14F2E2D300571553 /* PrayDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayDayView.m; sourceTree = "<group>"; };
-		299F19CD14F2E2D300571553 /* PrayDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayDayView.h; sourceTree = "<group>"; };
-		299F19CF14F2E2E500571553 /* PrayTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayTime.m; sourceTree = "<group>"; };
-		299F19D014F2E2E500571553 /* PrayTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayTime.h; sourceTree = "<group>"; };
 		299F19D214F2E2FD00571553 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		299F19D314F2E2FD00571553 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		299F19D514F2E31000571553 /* LocalNotificationsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNotificationsManager.m; sourceTree = "<group>"; };
@@ -245,11 +240,13 @@
 		299F19E614F2E6D900571553 /* frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = frame.png; sourceTree = "<group>"; };
 		299F19EB14F2EC6C00571553 /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 		299F19EC14F2EC6C00571553 /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
-		29D73BB7156EF74B00FFFD3E /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = Qonoot/TestViewController.h; sourceTree = "<group>"; };
-		29D73BB8156EF74B00FFFD3E /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = Qonoot/TestViewController.m; sourceTree = "<group>"; };
-		29D73BB9156EF74B00FFFD3E /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestViewController.xib; path = Qonoot/TestViewController.xib; sourceTree = "<group>"; };
-		29DF1D231502EA8700AD439E /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPad.storyboard; path = Qonoot/iPad.storyboard; sourceTree = "<group>"; };
-		29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		29D73BB7156EF74B00FFFD3E /* PrayItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayItemViewController.h; sourceTree = "<group>"; };
+		29D73BB8156EF74B00FFFD3E /* PrayItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayItemViewController.m; sourceTree = "<group>"; };
+		29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PrayItemViewController.xib; path = ../Qonoot/PrayItemViewController.xib; sourceTree = "<group>"; };
+		29D73BBC156F254B00FFFD3E /* PrayTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayTime.h; sourceTree = "<group>"; };
+		29D73BBD156F254B00FFFD3E /* PrayTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayTime.m; sourceTree = "<group>"; };
+		29DF1D231502EA8700AD439E /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPad.storyboard; path = ../Qonoot/iPad.storyboard; sourceTree = "<group>"; };
+		29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPhone.storyboard; path = ../Qonoot/iPhone.storyboard; sourceTree = "<group>"; };
 		29EF91DA14F9809100B4DED3 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = Qonoot/frameworks/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		29EF91DB14F9809100B4DED3 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = Qonoot/frameworks/ASICacheDelegate.h; sourceTree = "<group>"; };
 		29EF91DC14F9809100B4DED3 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = Qonoot/frameworks/ASIDataCompressor.h; sourceTree = "<group>"; };
@@ -505,10 +502,6 @@
 		2986DBFD14F2DAE90031D1D4 = {
 			isa = PBXGroup;
 			children = (
-				29D73BB7156EF74B00FFFD3E /* TestViewController.h */,
-				29D73BB8156EF74B00FFFD3E /* TestViewController.m */,
-				29D73BB9156EF74B00FFFD3E /* TestViewController.xib */,
-				29DF1D231502EA8700AD439E /* iPad.storyboard */,
 				29EF922314F9934900B4DED3 /* Default.wav */,
 				29EF922414F9934900B4DED3 /* Azoon 1.wav */,
 				299F19DB14F2E4EC00571553 /* assets */,
@@ -579,7 +572,6 @@
 			children = (
 				29EF922014F9925100B4DED3 /* SoundPlayer.h */,
 				29EF922114F9925100B4DED3 /* SoundPlayer.m */,
-				29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */,
 				29EF921D14F98FCA00B4DED3 /* SoundsViewController.h */,
 				29EF921E14F98FCA00B4DED3 /* SoundsViewController.m */,
 				29660B6D14F97D3F00A883D3 /* MapsViewController.h */,
@@ -590,14 +582,14 @@
 				299F19EB14F2EC6C00571553 /* LocationAnnotation.m */,
 				299F193F14F2E28000571553 /* PrayTimesViewController.h */,
 				299F193E14F2E28000571553 /* PrayTimesViewController.m */,
-				299F19CD14F2E2D300571553 /* PrayDayView.h */,
-				299F19CC14F2E2D300571553 /* PrayDayView.m */,
-				299F19D014F2E2E500571553 /* PrayTime.h */,
-				299F19CF14F2E2E500571553 /* PrayTime.m */,
+				29D73BBC156F254B00FFFD3E /* PrayTime.h */,
+				29D73BBD156F254B00FFFD3E /* PrayTime.m */,
 				299F19D914F2E35000571553 /* PrayNotification.h */,
 				299F19D814F2E35000571553 /* PrayNotification.m */,
 				2986DC1B14F2DAEA0031D1D4 /* QonootAppDelegate.h */,
 				2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */,
+				29D73BB7156EF74B00FFFD3E /* PrayItemViewController.h */,
+				29D73BB8156EF74B00FFFD3E /* PrayItemViewController.m */,
 				299F19D314F2E2FD00571553 /* XMLReader.h */,
 				299F19D214F2E2FD00571553 /* XMLReader.m */,
 				299F19D614F2E31000571553 /* LocalNotificationsManager.h */,
@@ -862,6 +854,9 @@
 		299F19DB14F2E4EC00571553 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */,
+				29DF1D231502EA8700AD439E /* iPad.storyboard */,
+				29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */,
 				299F19E614F2E6D900571553 /* frame.png */,
 				299F19DC14F2E4EC00571553 /* compass.jpeg */,
 				299F19DD14F2E4EC00571553 /* Default.png */,
@@ -937,7 +932,7 @@
 		2986DBFF14F2DAE90031D1D4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 2986DC0214F2DAE90031D1D4 /* Build configuration list for PBXProject "Qonoot" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -971,7 +966,7 @@
 				29EF922514F9934900B4DED3 /* Default.wav in Resources */,
 				29EF922614F9934900B4DED3 /* Azoon 1.wav in Resources */,
 				29DF1D241502EA8700AD439E /* iPad.storyboard in Resources */,
-				29D73BBB156EF74B00FFFD3E /* TestViewController.xib in Resources */,
+				29D73BBB156EF74B00FFFD3E /* PrayItemViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,8 +998,6 @@
 				299F19C914F2E29400571553 /* ASIS3ObjectRequest.m in Sources */,
 				299F19CA14F2E29400571553 /* ASIS3Request.m in Sources */,
 				299F19CB14F2E29400571553 /* ASIS3ServiceRequest.m in Sources */,
-				299F19CE14F2E2D300571553 /* PrayDayView.m in Sources */,
-				299F19D114F2E2E500571553 /* PrayTime.m in Sources */,
 				299F19D414F2E2FD00571553 /* XMLReader.m in Sources */,
 				299F19D714F2E31000571553 /* LocalNotificationsManager.m in Sources */,
 				299F19DA14F2E35000571553 /* PrayNotification.m in Sources */,
@@ -1032,7 +1025,8 @@
 				29EF921C14F98AE000B4DED3 /* ReminderTableViewController.m in Sources */,
 				29EF921F14F98FCA00B4DED3 /* SoundsViewController.m in Sources */,
 				29EF922214F9925100B4DED3 /* SoundPlayer.m in Sources */,
-				29D73BBA156EF74B00FFFD3E /* TestViewController.m in Sources */,
+				29D73BBA156EF74B00FFFD3E /* PrayItemViewController.m in Sources */,
+				29D73BBE156F254B00FFFD3E /* PrayTime.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

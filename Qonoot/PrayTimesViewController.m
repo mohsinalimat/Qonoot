@@ -96,21 +96,8 @@
         else {
             frameSize = 320;
         }
-        /*
-        PrayDayView *item = [[PrayDayView alloc] initWithFrame:CGRectMake(scrollView.contentSize.width, 0, frameSize, 20)];
-        item.dayID = num;
-        item.backgroundColor = [UIColor clearColor];
-        [item setNeedsDisplay];
-        item.dataSource = self;
-        [scrollView addSubview:item];
-        [scrollView setContentSize:CGSizeMake(item.frame.origin.x + item.frame.size.width, 100)];
-         */
         
-        //TestViewController *item = [[TestViewController alloc] init];
-        //[scrollView addSubview:item.view];
-        //[scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, 100)];
-        
-        TestViewController *item2 = [[TestViewController alloc] init];
+        PrayItemViewController *item2 = [[PrayItemViewController alloc] init];
         item2.dayID = num;
         item2.dataSource = self;
         
@@ -225,7 +212,7 @@
     //NSLog(@"TZ: %@", timeZone);
 }
 
-- (PrayTime*) myData:(PrayDayView *)sender{
+- (PrayTime*) myData:(PrayItemViewController *)sender{
     return [_prayerTimes objectAtIndex:[sender.dayID intValue]];
 }
 

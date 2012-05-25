@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <EventKit/EventKit.h>
-#import "PrayDayView.h"
 #import "ASIHTTPRequest.h"
 #import "XMLReader.h"
 #import "PrayTime.h"
 #import "CLLocation+measuring.h"
 #import "NSString+HTML.h"
 #import "LocalNotificationsManager.h"
-#import "TestViewController.h"
+#import "PrayItemViewController.h"
 
 @interface PrayTimesViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate>
 {
