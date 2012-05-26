@@ -13,10 +13,10 @@
 @interface MapsViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 {
     CLLocationManager *locationManager;
-    float differene;
 }
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentBar;
 @property (weak, nonatomic) IBOutlet UIView *mapView;
+@property (weak, nonatomic) IBOutlet UIView *cameraView;
 
 @property (weak, nonatomic) IBOutlet UIView *compassView;
 @property float difference;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		294C60D514F9485A002E68F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C60D414F9485A002E68F2 /* AudioToolbox.framework */; };
+		295B4811157189840086E3D7 /* makke-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 295B4810157189840086E3D7 /* makke-icon.png */; };
 		295F236E14F2DD0100801A03 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F236814F2DD0100801A03 /* CFNetwork.framework */; };
 		295F236F14F2DD0100801A03 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F236914F2DD0100801A03 /* CoreLocation.framework */; };
 		295F237014F2DD0100801A03 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F236A14F2DD0100801A03 /* EventKit.framework */; };
@@ -23,6 +24,8 @@
 		2986DC1114F2DAEA0031D1D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2986DC1014F2DAEA0031D1D4 /* CoreGraphics.framework */; };
 		2986DC1914F2DAEA0031D1D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2986DC1814F2DAEA0031D1D4 /* main.m */; };
 		2986DC1D14F2DAEA0031D1D4 /* QonootAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */; };
+		29876B5F156F32B200BCDD15 /* bell.png in Resources */ = {isa = PBXBuildFile; fileRef = 29876B5E156F32B200BCDD15 /* bell.png */; };
+		29876B62156F33DF00BCDD15 /* bell_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = 29876B61156F33DF00BCDD15 /* bell_dark.png */; };
 		299F194014F2E28000571553 /* PrayTimesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F193E14F2E28000571553 /* PrayTimesViewController.m */; };
 		299F19BA14F2E29400571553 /* ASICloudFilesCDNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F197214F2E29400571553 /* ASICloudFilesCDNRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		299F19BB14F2E29400571553 /* ASICloudFilesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 299F197414F2E29400571553 /* ASICloudFilesContainer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -85,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		294C60D414F9485A002E68F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		295B4810157189840086E3D7 /* makke-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "makke-icon.png"; sourceTree = "<group>"; };
 		295F236814F2DD0100801A03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		295F236914F2DD0100801A03 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		295F236A14F2DD0100801A03 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
@@ -143,6 +147,8 @@
 		2986DC1A14F2DAEA0031D1D4 /* Qonoot-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Qonoot-Prefix.pch"; sourceTree = "<group>"; };
 		2986DC1B14F2DAEA0031D1D4 /* QonootAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QonootAppDelegate.h; sourceTree = "<group>"; };
 		2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QonootAppDelegate.m; sourceTree = "<group>"; };
+		29876B5E156F32B200BCDD15 /* bell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell.png; sourceTree = "<group>"; };
+		29876B61156F33DF00BCDD15 /* bell_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bell_dark.png; sourceTree = "<group>"; };
 		299F193E14F2E28000571553 /* PrayTimesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayTimesViewController.m; sourceTree = "<group>"; };
 		299F193F14F2E28000571553 /* PrayTimesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayTimesViewController.h; sourceTree = "<group>"; };
 		299F194314F2E29400571553 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -855,6 +861,9 @@
 			isa = PBXGroup;
 			children = (
 				29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */,
+				29876B5E156F32B200BCDD15 /* bell.png */,
+				295B4810157189840086E3D7 /* makke-icon.png */,
+				29876B61156F33DF00BCDD15 /* bell_dark.png */,
 				29DF1D231502EA8700AD439E /* iPad.storyboard */,
 				29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */,
 				299F19E614F2E6D900571553 /* frame.png */,
@@ -967,6 +976,9 @@
 				29EF922614F9934900B4DED3 /* Azoon 1.wav in Resources */,
 				29DF1D241502EA8700AD439E /* iPad.storyboard in Resources */,
 				29D73BBB156EF74B00FFFD3E /* PrayItemViewController.xib in Resources */,
+				29876B5F156F32B200BCDD15 /* bell.png in Resources */,
+				29876B62156F33DF00BCDD15 /* bell_dark.png in Resources */,
+				295B4811157189840086E3D7 /* makke-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

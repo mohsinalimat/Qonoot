@@ -33,6 +33,7 @@
 @property (strong, nonatomic) NSString *longtitude;
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *timeZone;
-@property (nonatomic, strong) NSMutableArray *prayerTimes;
+@property (strong, nonatomic) NSMutableArray *prayerTimes;
+@property (strong, nonatomic) PrayItemViewController *prayItem;
 
 @end

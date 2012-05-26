@@ -8,20 +8,25 @@
 
 #import "MapsViewController.h"
 #import "LocationAnnotation.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface MapsViewController()
+@interface MapsViewController()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *map;
+@property (strong,nonatomic) NSNumber *makkeX;
+@property (strong,nonatomic) UIImageView *makkeImageView;
 
 @end
 
 @implementation MapsViewController
 @synthesize map;
-
+@synthesize makkeX;
+@synthesize makkeImageView;
 @synthesize locationManager;
 @synthesize compassImage;
 @synthesize ghebleImage;
 @synthesize segmentBar;
 @synthesize mapView;
+@synthesize cameraView;
 @synthesize compassView;
 @synthesize difference;
 
@@ -38,12 +43,47 @@
     {
         compassView.hidden = NO;
         mapView.hidden = YES;
-    }else
+        cameraView.hidden = YES;
+    }else if(index == 1)
     {
         compassView.hidden = YES;
         mapView.hidden = NO;
+        cameraView.hidden = YES;
         [self.map selectAnnotation:[self.map.annotations objectAtIndex:0] animated:YES];
+    }else if(index == 2)
+    {
+        compassView.hidden = YES;
+        mapView.hidden = YES;
+        cameraView.hidden = NO;
+        
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.sourceType =  UIImagePickerControllerSourceTypeCamera;
+        imagePicker.delegate = self;
+        imagePicker.showsCameraControls = NO;
+        [self presentModalViewController:imagePicker animated:YES];
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        [view setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]];
+        
+        UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+        [doneButton setTitle:@"Done" forState:UIControlStateNormal];
+        [doneButton setFrame:CGRectMake(100, 440, 120, 30)];
+        [doneButton addTarget:self action:@selector(onDone:) forControlEvents:UIControlEventTouchDown];
+        [view addSubview:doneButton];
+        makkeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"makke-icon.png"]];
+        [view addSubview:makkeImageView];
+        
+        imagePicker.cameraOverlayView = view;
     }
+}
+
+- (void)onDone:(id)sender
+{
+    [self dismissModalViewControllerAnimated:YES];
+    
+    [self switchViewTo:0];
+    
+    [self.segmentBar setSelectedSegmentIndex:0];
 }
 
 - (void)action:(id)sender
@@ -65,10 +105,7 @@
     self.locationManager.delegate = self;
     self.locationManager.headingOrientation = CLDeviceOrientationFaceUp;
     
-    
-    
     mapView.hidden = YES;
-    
     LocationAnnotation *makke = [[LocationAnnotation alloc] init];
     
     self.map.delegate = self;
@@ -140,7 +177,22 @@
     //ghebleImage.transform = CGAffineTransformMakeRotation(myRadians)
     ghebleImage.transform = CGAffineTransformMakeRotation(myRadians);
     
-    [UIView commitAnimations];;
+    int truHeading = [newHeading trueHeading];
+    int adjustedHeading = truHeading - difference;
+    if(adjustedHeading < 0)
+    {
+        adjustedHeading = adjustedHeading + 360;
+    }
+    
+    int myNum = adjustedHeading + 180;
+    if(myNum > 360)
+        myNum = myNum - 360;
+    myNum = myNum - 180;
+    
+    makkeX = [NSNumber numberWithInt:myNum];
+    [makkeImageView setFrame:CGRectMake(([makkeX intValue]*-1*1.5) + 120, 120, 60, 60)];
+    
+    [UIView commitAnimations];
 }
 
 - (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager {
@@ -179,13 +231,14 @@
     [self setCompassView:nil];
     [self setMapView:nil];
     [self setMap:nil];
+    [self setCameraView:nil];
     [super viewDidUnload];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
-    [self.locationManager stopUpdatingLocation];
-    [self.locationManager stopUpdatingHeading];
+    //[self.locationManager stopUpdatingLocation];
+    //[self.locationManager stopUpdatingHeading];
 }
 
 -(void)viewDidAppear:(BOOL)animated

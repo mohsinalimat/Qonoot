@@ -24,6 +24,7 @@
 @synthesize timeZone;
 @synthesize lnm = _lnm;
 @synthesize num;
+@synthesize prayItem;
 
 - (LocalNotificationsManager *)lnm
 {
@@ -85,6 +86,28 @@
     [request startAsynchronous];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [spinner stopAnimating];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addLocalNotification:) name:@"addLocalNotification" object:nil];
+    
+    [scrollView setContentSize:CGSizeMake(0, 100)];
+    scrollView.pagingEnabled = YES;
+    scrollView.delegate = self;
+    scrollView.backgroundColor = [UIColor clearColor];
+    
+    _prayerTimes = [[NSMutableArray alloc] init];
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.delegate = self;
+    self.locationManager.headingOrientation = CLDeviceOrientationFaceUp;
+    [self.locationManager startUpdatingLocation];
+}
+
+
 - (void) createButton
 {
     if ([num intValue] < [_prayerTimes count])
@@ -97,13 +120,15 @@
             frameSize = 320;
         }
         
-        PrayItemViewController *item2 = [[PrayItemViewController alloc] init];
-        item2.dayID = num;
-        item2.dataSource = self;
+        PrayItemViewController *item = [[PrayItemViewController alloc] init];
+        prayItem = item;
+        item.dayID = num;
+        item.dataSource = self;
         
-        [item2.view setFrame:CGRectMake(scrollView.contentSize.width, 0, frameSize, 0)];
-        [scrollView addSubview:item2.view];
-        [scrollView setContentSize:CGSizeMake(item2.view.frame.origin.x + item2.view.frame.size.width, 100)];
+        [item.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 480)];
+        [scrollView addSubview:item.view];
+        //[self.view addSubview:item.view];
+        [scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, 480)];
         
         int value = [num intValue];
         num = [NSNumber numberWithInt:value + 1];
@@ -213,7 +238,12 @@
 }
 
 - (PrayTime*) myData:(PrayItemViewController *)sender{
-    return [_prayerTimes objectAtIndex:[sender.dayID intValue]];
+    PrayTime *prayTime;
+    if(_prayerTimes)
+    {
+        prayTime = [_prayerTimes objectAtIndex:[sender.dayID intValue]];
+    }
+    return prayTime;
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)sv
@@ -235,29 +265,6 @@
 }
 
 #pragma mark - View lifecycle
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    [spinner stopAnimating];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addLocalNotification:) name:@"addLocalNotification" object:nil];
-    
-    [scrollView setContentSize:CGSizeMake(0, 100)];
-    scrollView.pagingEnabled = YES;
-    scrollView.delegate = self;
-    scrollView.backgroundColor = [UIColor clearColor];
-    
-    _prayerTimes = [[NSMutableArray alloc] init];
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.delegate = self;
-    self.locationManager.headingOrientation = CLDeviceOrientationFaceUp;
-    [self.locationManager startUpdatingLocation];
-
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
