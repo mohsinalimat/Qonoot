@@ -13,11 +13,11 @@
 @interface PrayTimesViewController() <PrayDayDataSource>
 @property (nonatomic, strong) LocalNotificationsManager *lnm;
 @property (nonatomic, strong) PrayTimesModel *model;
+@property (nonatomic) int monthPlus;
 @end
 
 @implementation PrayTimesViewController
 
-@synthesize prayerTimes = _prayerTimes;
 @synthesize spinner;
 @synthesize scrollView;
 @synthesize locationManager;
@@ -26,7 +26,6 @@
 @synthesize timeZone;
 @synthesize lnm = _lnm;
 @synthesize num;
-@synthesize prayItem;
 @synthesize model = _model;
 
 - (LocalNotificationsManager *)lnm
@@ -70,7 +69,7 @@
     
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
     NSInteger month = [components month];
-    NSString *monthValue = [NSString stringWithFormat:@"%i", month];
+    NSString *monthValue = [NSString stringWithFormat:@"%i", month + self.monthPlus];
     
     NSString *urlString = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@", 
                            base, 
@@ -108,7 +107,6 @@
     scrollView.delegate = self;
     scrollView.backgroundColor = [UIColor clearColor];
     
-    _prayerTimes = [[NSMutableArray alloc] init];
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.delegate = self;
@@ -120,28 +118,40 @@
 - (void) createButton
 {
     NSLog(@"Create Button");
-    if ([num intValue] < [_prayerTimes count])
+    if ([num intValue] < [self.model.objects count])
     {
         int frameSize;
-        //if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            //frameSize = 768;
-        //}
-        //else {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            frameSize = 768;
+            
+            PrayItemViewController_iPad *item_iPad = [[PrayItemViewController_iPad alloc] init];
+            item_iPad.dayID = num;
+            item_iPad.dataSource = self;
+            
+            [item_iPad.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 768, 100)];
+            [scrollView addSubview:item_iPad.view];
+            [scrollView setContentSize:CGSizeMake(item_iPad.view.frame.origin.x + item_iPad.view.frame.size.width, item_iPad.view.frame.size.height)];
+            
+            int value = [num intValue];
+            num = [NSNumber numberWithInt:value + 1];
+        }
+        else {
             frameSize = 320;
-        //}
-        
-        PrayItemViewController *item = [[PrayItemViewController alloc] init];
-        prayItem = item;
-        item.dayID = num;
-        item.dataSource = self;
-        
-        [item.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 100)];
-        [scrollView addSubview:item.view];
-        //[self.view addSubview:item.view];
-        [scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, item.view.frame.size.height)];
-        
-        int value = [num intValue];
-        num = [NSNumber numberWithInt:value + 1];
+            
+            PrayItemViewController *item = [[PrayItemViewController alloc] init];
+            item.dayID = num;
+            item.dataSource = self;
+            
+            [item.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 100)];
+            [scrollView addSubview:item.view];
+            [scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, item.view.frame.size.height)];
+            
+            int value = [num intValue];
+            num = [NSNumber numberWithInt:value + 1];
+        }
+    }else
+    {
+        [self callWebService];
     }
 }
 
@@ -162,10 +172,15 @@
     
     NSArray *dates = [response valueForKey:@"date"];
     
-    _prayerTimes = [[NSMutableArray alloc] init];
-    
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
     NSInteger day = [components day]-1;
+    
+    if(self.monthPlus == 0)
+    {
+        day = [components day]-1;
+    }else{
+        day = 0;
+    }
     
     for (int i = day; i < [dates count]; i++) {
         NSDictionary *date = [dates objectAtIndex:i];
@@ -194,11 +209,12 @@
         [time setSunrise:[sunrise valueForKey:@"text"]];
         [time setZuhr:[zuhr valueForKey:@"text"]];
         
-        [_prayerTimes addObject:time];
+        [self.model addPrayTime:time];
     }
     
     [self createButton];
     [self createButton];
+    self.monthPlus++;
 }
 
 - (void)requestError:(ASIHTTPRequest *)request
@@ -222,9 +238,9 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:@"addLocalNotification" object:@"isha"];
     }else
     {
-        for (int i = 0; i < [_prayerTimes count]; i++) 
+        for (int i = 0; i < [self.model.objects count]; i++) 
         {
-            PrayTime *pt = [_prayerTimes objectAtIndex:i];
+            PrayTime *pt = [self.model.objects objectAtIndex:i];
             [self.lnm addLocalNotification:round withPrayTime:pt];
         }
     }
@@ -249,10 +265,7 @@
 
 - (PrayTime*) myData:(PrayItemViewController *)sender{
     PrayTime *prayTime;
-    if(_prayerTimes)
-    {
-        prayTime = [_prayerTimes objectAtIndex:[sender.dayID intValue]];
-    }
+    prayTime = [self.model.objects objectAtIndex:[sender.dayID intValue]];
     return prayTime;
 }
 

@@ -10,10 +10,12 @@
 
 @interface PrayTimesModel : NSObject
 
--(void)removeGroup:(int)index;
+-(void)addPrayTime:(id)object;
 + (id)sharedManager;
 
 @property (nonatomic) int currentGroup;
 @property (strong,nonatomic) NSString* currentGroupName;
+
+@property (strong,nonatomic) NSMutableArray *objects;
 
 @end

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2933311315C4CC5100FEF031 /* PrayTimesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933311215C4CC5100FEF031 /* PrayTimesModel.m */; };
+		2933311815C5C84900FEF031 /* PrayItemViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933311615C5C84800FEF031 /* PrayItemViewController_iPad.m */; };
+		2933311915C5C84900FEF031 /* PrayItemViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2933311715C5C84800FEF031 /* PrayItemViewController_iPad.xib */; };
 		294C60D514F9485A002E68F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C60D414F9485A002E68F2 /* AudioToolbox.framework */; };
 		295B4811157189840086E3D7 /* makke-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 295B4810157189840086E3D7 /* makke-icon.png */; };
 		295F236E14F2DD0100801A03 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F236814F2DD0100801A03 /* CFNetwork.framework */; };
@@ -90,6 +92,9 @@
 /* Begin PBXFileReference section */
 		2933311115C4CC5100FEF031 /* PrayTimesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayTimesModel.h; sourceTree = "<group>"; };
 		2933311215C4CC5100FEF031 /* PrayTimesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayTimesModel.m; sourceTree = "<group>"; };
+		2933311515C5C84800FEF031 /* PrayItemViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrayItemViewController_iPad.h; path = ../assets/PrayItemViewController_iPad.h; sourceTree = "<group>"; };
+		2933311615C5C84800FEF031 /* PrayItemViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrayItemViewController_iPad.m; path = ../assets/PrayItemViewController_iPad.m; sourceTree = "<group>"; };
+		2933311715C5C84800FEF031 /* PrayItemViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PrayItemViewController_iPad.xib; path = ../assets/PrayItemViewController_iPad.xib; sourceTree = "<group>"; };
 		294C60D414F9485A002E68F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		295B4810157189840086E3D7 /* makke-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "makke-icon.png"; sourceTree = "<group>"; };
 		295F236814F2DD0100801A03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -251,7 +256,7 @@
 		299F19EC14F2EC6C00571553 /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
 		29D73BB7156EF74B00FFFD3E /* PrayItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayItemViewController.h; sourceTree = "<group>"; };
 		29D73BB8156EF74B00FFFD3E /* PrayItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayItemViewController.m; sourceTree = "<group>"; };
-		29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PrayItemViewController.xib; path = ../Qonoot/PrayItemViewController.xib; sourceTree = "<group>"; };
+		29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrayItemViewController.xib; sourceTree = "<group>"; };
 		29D73BBC156F254B00FFFD3E /* PrayTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayTime.h; sourceTree = "<group>"; };
 		29D73BBD156F254B00FFFD3E /* PrayTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayTime.m; sourceTree = "<group>"; };
 		29DF1D231502EA8700AD439E /* iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = iPad.storyboard; path = ../Qonoot/iPad.storyboard; sourceTree = "<group>"; };
@@ -334,6 +339,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2933311A15C5C93E00FEF031 /* Pray Items */ = {
+			isa = PBXGroup;
+			children = (
+				29D73BB7156EF74B00FFFD3E /* PrayItemViewController.h */,
+				29D73BB8156EF74B00FFFD3E /* PrayItemViewController.m */,
+				29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */,
+				2933311515C5C84800FEF031 /* PrayItemViewController_iPad.h */,
+				2933311615C5C84800FEF031 /* PrayItemViewController_iPad.m */,
+				2933311715C5C84800FEF031 /* PrayItemViewController_iPad.xib */,
+			);
+			name = "Pray Items";
+			sourceTree = "<group>";
+		};
 		2963C0D514F97529004FD91C /* CloudFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -599,8 +617,7 @@
 				299F19D814F2E35000571553 /* PrayNotification.m */,
 				2986DC1B14F2DAEA0031D1D4 /* QonootAppDelegate.h */,
 				2986DC1C14F2DAEA0031D1D4 /* QonootAppDelegate.m */,
-				29D73BB7156EF74B00FFFD3E /* PrayItemViewController.h */,
-				29D73BB8156EF74B00FFFD3E /* PrayItemViewController.m */,
+				2933311A15C5C93E00FEF031 /* Pray Items */,
 				299F19D314F2E2FD00571553 /* XMLReader.h */,
 				299F19D214F2E2FD00571553 /* XMLReader.m */,
 				299F19D614F2E31000571553 /* LocalNotificationsManager.h */,
@@ -865,12 +882,11 @@
 		299F19DB14F2E4EC00571553 /* assets */ = {
 			isa = PBXGroup;
 			children = (
-				29D73BB9156EF74B00FFFD3E /* PrayItemViewController.xib */,
+				29DF1D231502EA8700AD439E /* iPad.storyboard */,
+				29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */,
 				29876B5E156F32B200BCDD15 /* bell.png */,
 				295B4810157189840086E3D7 /* makke-icon.png */,
 				29876B61156F33DF00BCDD15 /* bell_dark.png */,
-				29DF1D231502EA8700AD439E /* iPad.storyboard */,
-				29E9F9ED14F9722000DF7A58 /* iPhone.storyboard */,
 				299F19E614F2E6D900571553 /* frame.png */,
 				299F19DC14F2E4EC00571553 /* compass.jpeg */,
 				299F19DD14F2E4EC00571553 /* Default.png */,
@@ -984,6 +1000,7 @@
 				29876B5F156F32B200BCDD15 /* bell.png in Resources */,
 				29876B62156F33DF00BCDD15 /* bell_dark.png in Resources */,
 				295B4811157189840086E3D7 /* makke-icon.png in Resources */,
+				2933311915C5C84900FEF031 /* PrayItemViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1045,6 +1062,7 @@
 				29D73BBA156EF74B00FFFD3E /* PrayItemViewController.m in Sources */,
 				29D73BBE156F254B00FFFD3E /* PrayTime.m in Sources */,
 				2933311315C4CC5100FEF031 /* PrayTimesModel.m in Sources */,
+				2933311815C5C84900FEF031 /* PrayItemViewController_iPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

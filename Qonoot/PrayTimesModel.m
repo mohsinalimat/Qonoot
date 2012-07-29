@@ -10,6 +10,21 @@
 
 @implementation PrayTimesModel
 
+@synthesize objects = _objects;
+
+-(NSMutableArray*)objects
+{
+    if(!_objects){
+        _objects = [NSMutableArray array];
+    }
+    return _objects;
+}
+
+-(void)setObjects:(NSMutableArray *)objects
+{
+    _objects = objects;
+}
+
 static PrayTimesModel *sharedMyManager = nil;
 #pragma mark Singleton Methods
 + (id)sharedManager {
@@ -20,9 +35,9 @@ static PrayTimesModel *sharedMyManager = nil;
     return sharedMyManager;
 }
 
--(void)removeGroup:(int)index
+-(void)addPrayTime:(id)object
 {
-    
+    [self.objects addObject:object];
 }
 
 @end

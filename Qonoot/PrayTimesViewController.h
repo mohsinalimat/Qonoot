@@ -15,6 +15,7 @@
 #import "NSString+HTML.h"
 #import "LocalNotificationsManager.h"
 #import "PrayItemViewController.h"
+#import "PrayItemViewController_iPad.h"
 
 @interface PrayTimesViewController : UIViewController <CLLocationManagerDelegate, UIScrollViewDelegate>
 {
