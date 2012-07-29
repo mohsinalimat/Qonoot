@@ -8,9 +8,11 @@
 
 #import "PrayTimesViewController.h"
 #import "LocalNotificationsManager.h"
+#import "PrayTimesModel.h"
 
 @interface PrayTimesViewController() <PrayDayDataSource>
 @property (nonatomic, strong) LocalNotificationsManager *lnm;
+@property (nonatomic, strong) PrayTimesModel *model;
 @end
 
 @implementation PrayTimesViewController
@@ -25,11 +27,18 @@
 @synthesize lnm = _lnm;
 @synthesize num;
 @synthesize prayItem;
+@synthesize model = _model;
 
 - (LocalNotificationsManager *)lnm
 {
     if (!_lnm) _lnm = [LocalNotificationsManager sharedManager];
     return _lnm;
+}
+
+- (PrayTimesModel *)model
+{
+    if (!_model) _model = [PrayTimesModel sharedManager];
+    return _model;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -110,25 +119,26 @@
 
 - (void) createButton
 {
+    NSLog(@"Create Button");
     if ([num intValue] < [_prayerTimes count])
     {
         int frameSize;
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            frameSize = 768;
-        }
-        else {
+        //if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            //frameSize = 768;
+        //}
+        //else {
             frameSize = 320;
-        }
+        //}
         
         PrayItemViewController *item = [[PrayItemViewController alloc] init];
         prayItem = item;
         item.dayID = num;
         item.dataSource = self;
         
-        [item.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 480)];
+        [item.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 100)];
         [scrollView addSubview:item.view];
         //[self.view addSubview:item.view];
-        [scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, 480)];
+        [scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, item.view.frame.size.height)];
         
         int value = [num intValue];
         num = [NSNumber numberWithInt:value + 1];

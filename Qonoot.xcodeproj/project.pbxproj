@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2933311315C4CC5100FEF031 /* PrayTimesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933311215C4CC5100FEF031 /* PrayTimesModel.m */; };
 		294C60D514F9485A002E68F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C60D414F9485A002E68F2 /* AudioToolbox.framework */; };
 		295B4811157189840086E3D7 /* makke-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 295B4810157189840086E3D7 /* makke-icon.png */; };
 		295F236E14F2DD0100801A03 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F236814F2DD0100801A03 /* CFNetwork.framework */; };
@@ -87,6 +88,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2933311115C4CC5100FEF031 /* PrayTimesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayTimesModel.h; sourceTree = "<group>"; };
+		2933311215C4CC5100FEF031 /* PrayTimesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayTimesModel.m; sourceTree = "<group>"; };
 		294C60D414F9485A002E68F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		295B4810157189840086E3D7 /* makke-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "makke-icon.png"; sourceTree = "<group>"; };
 		295F236814F2DD0100801A03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -588,6 +591,8 @@
 				299F19EB14F2EC6C00571553 /* LocationAnnotation.m */,
 				299F193F14F2E28000571553 /* PrayTimesViewController.h */,
 				299F193E14F2E28000571553 /* PrayTimesViewController.m */,
+				2933311115C4CC5100FEF031 /* PrayTimesModel.h */,
+				2933311215C4CC5100FEF031 /* PrayTimesModel.m */,
 				29D73BBC156F254B00FFFD3E /* PrayTime.h */,
 				29D73BBD156F254B00FFFD3E /* PrayTime.m */,
 				299F19D914F2E35000571553 /* PrayNotification.h */,
@@ -1039,6 +1044,7 @@
 				29EF922214F9925100B4DED3 /* SoundPlayer.m in Sources */,
 				29D73BBA156EF74B00FFFD3E /* PrayItemViewController.m in Sources */,
 				29D73BBE156F254B00FFFD3E /* PrayTime.m in Sources */,
+				2933311315C4CC5100FEF031 /* PrayTimesModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
