@@ -62,12 +62,20 @@
         imagePicker.showsCameraControls = NO;
         [self presentModalViewController:imagePicker animated:YES];
         
-        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+        int frameWidth;
+        
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            frameWidth = 768;
+        }else{
+            frameWidth = 320;
+        }
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frameWidth, 480)];
         [view setBackgroundColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:0]];
         
         UIButton *doneButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [doneButton setTitle:@"Done" forState:UIControlStateNormal];
-        [doneButton setFrame:CGRectMake(100, 440, 120, 30)];
+        [doneButton setFrame:CGRectMake((frameWidth/2) - 60, 440, 120, 30)];
         [doneButton addTarget:self action:@selector(onDone:) forControlEvents:UIControlEventTouchDown];
         [view addSubview:doneButton];
         makkeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"makke-icon.png"]];
@@ -109,14 +117,14 @@
     LocationAnnotation *makke = [[LocationAnnotation alloc] init];
     
     self.map.delegate = self;
-    [self.map setZoomEnabled:NO];
-    [self.map setScrollEnabled:NO];
+    [self.map setZoomEnabled:YES];
+    [self.map setScrollEnabled:YES];
     self.map.mapType = MKMapTypeSatellite;
     self.map.showsUserLocation = YES;
     [self.map addAnnotation:makke];
     
-#define MAP_PADDING 1.1
-#define MINIMUM_VISIBLE_LATITUDE 0.01
+#define MAP_PADDING 1.2
+#define MINIMUM_VISIBLE_LATITUDE 0.001
     
     //New York
     //latitude = 40.647304 
@@ -169,12 +177,12 @@
     
     float compassBearing = 360 - [newHeading trueHeading];
     float myRadians = degreesToRadians( compassBearing );
-    //compassImage.transform = CGAffineTransformMakeRotation(myRadians);
     compassImage.transform = CGAffineTransformMakeRotation(myRadians);
+    
+    mapView.transform = CGAffineTransformMakeRotation(myRadians);
     
     compassBearing = compassBearing + difference;
     myRadians = degreesToRadians( compassBearing );
-    //ghebleImage.transform = CGAffineTransformMakeRotation(myRadians)
     ghebleImage.transform = CGAffineTransformMakeRotation(myRadians);
     
     int truHeading = [newHeading trueHeading];
@@ -188,9 +196,29 @@
     if(myNum > 360)
         myNum = myNum - 360;
     myNum = myNum - 180;
-    
     makkeX = [NSNumber numberWithInt:myNum];
-    [makkeImageView setFrame:CGRectMake(([makkeX intValue]*-1*1.5) + 120, 120, 60, 60)];
+    
+    int frameWidth;
+    int finalXPosition;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        frameWidth = (768/2) - 30;
+        finalXPosition = ([makkeX intValue]*-1*5) + frameWidth;
+        if(finalXPosition > 738)
+            finalXPosition = 738;
+        
+        if(finalXPosition < -30)
+            finalXPosition = -30;
+    }else{
+        frameWidth = (320/2) - 30;
+        finalXPosition = ([makkeX intValue]*-1*5) + frameWidth;
+        if(finalXPosition > 290)
+            finalXPosition = 290;
+        
+        if(finalXPosition < -30)
+            finalXPosition = -30;
+    }
+    
+    [makkeImageView setFrame:CGRectMake(finalXPosition, 120, 60, 60)];
     
     [UIView commitAnimations];
 }

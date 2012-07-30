@@ -10,6 +10,7 @@
 		2933311315C4CC5100FEF031 /* PrayTimesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933311215C4CC5100FEF031 /* PrayTimesModel.m */; };
 		2933311815C5C84900FEF031 /* PrayItemViewController_iPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2933311615C5C84800FEF031 /* PrayItemViewController_iPad.m */; };
 		2933311915C5C84900FEF031 /* PrayItemViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2933311715C5C84800FEF031 /* PrayItemViewController_iPad.xib */; };
+		2933311C15C60F4600FEF031 /* arrow_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 2933311B15C60F4600FEF031 /* arrow_blue.png */; };
 		294C60D514F9485A002E68F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 294C60D414F9485A002E68F2 /* AudioToolbox.framework */; };
 		295B4811157189840086E3D7 /* makke-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 295B4810157189840086E3D7 /* makke-icon.png */; };
 		295F236E14F2DD0100801A03 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295F236814F2DD0100801A03 /* CFNetwork.framework */; };
@@ -95,6 +96,7 @@
 		2933311515C5C84800FEF031 /* PrayItemViewController_iPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrayItemViewController_iPad.h; path = ../assets/PrayItemViewController_iPad.h; sourceTree = "<group>"; };
 		2933311615C5C84800FEF031 /* PrayItemViewController_iPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrayItemViewController_iPad.m; path = ../assets/PrayItemViewController_iPad.m; sourceTree = "<group>"; };
 		2933311715C5C84800FEF031 /* PrayItemViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PrayItemViewController_iPad.xib; path = ../assets/PrayItemViewController_iPad.xib; sourceTree = "<group>"; };
+		2933311B15C60F4600FEF031 /* arrow_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_blue.png; sourceTree = "<group>"; };
 		294C60D414F9485A002E68F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		295B4810157189840086E3D7 /* makke-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "makke-icon.png"; sourceTree = "<group>"; };
 		295F236814F2DD0100801A03 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -887,6 +889,7 @@
 				29876B5E156F32B200BCDD15 /* bell.png */,
 				295B4810157189840086E3D7 /* makke-icon.png */,
 				29876B61156F33DF00BCDD15 /* bell_dark.png */,
+				2933311B15C60F4600FEF031 /* arrow_blue.png */,
 				299F19E614F2E6D900571553 /* frame.png */,
 				299F19DC14F2E4EC00571553 /* compass.jpeg */,
 				299F19DD14F2E4EC00571553 /* Default.png */,
@@ -1001,6 +1004,7 @@
 				29876B62156F33DF00BCDD15 /* bell_dark.png in Resources */,
 				295B4811157189840086E3D7 /* makke-icon.png in Resources */,
 				2933311915C5C84900FEF031 /* PrayItemViewController_iPad.xib in Resources */,
+				2933311C15C60F4600FEF031 /* arrow_blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

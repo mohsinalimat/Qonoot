@@ -147,8 +147,8 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="top" image="icon-gheble.png" id="LZc-Rh-3K5">
-                                        <rect key="frame" x="80" y="80" width="160" height="160"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="arrow_blue.png" id="LZc-Rh-3K5">
+                                        <rect key="frame" x="80" y="35" width="160" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.26711989730000002" green="0.29911308279999999" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                     </imageView>
@@ -235,9 +235,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow_blue.png" width="100" height="360"/>
         <image name="compass.jpeg" width="400" height="400"/>
         <image name="gheble-tab.png" width="32" height="32"/>
-        <image name="icon-gheble.png" width="29" height="80"/>
     </resources>
     <classes>
         <class className="MapsViewController" superclassName="UIViewController">

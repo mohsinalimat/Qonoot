@@ -67,6 +67,8 @@
     NSString *timeZoneURL = @"&timezone=";
     NSString *timeZoneValue = timeZone;
     
+    NSLog(@"Month %i", self.monthPlus);
+    
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSDayCalendarUnit | NSMonthCalendarUnit | NSYearCalendarUnit fromDate:[NSDate date]];
     NSInteger month = [components month];
     NSString *monthValue = [NSString stringWithFormat:@"%i", month + self.monthPlus];
