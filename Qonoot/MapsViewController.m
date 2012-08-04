@@ -177,12 +177,13 @@
     
     float compassBearing = 360 - [newHeading trueHeading];
     float myRadians = degreesToRadians( compassBearing );
-    compassImage.transform = CGAffineTransformMakeRotation(myRadians);
     
+    compassImage.transform = CGAffineTransformMakeRotation(myRadians);
     mapView.transform = CGAffineTransformMakeRotation(myRadians);
     
     compassBearing = compassBearing + difference;
     myRadians = degreesToRadians( compassBearing );
+    
     ghebleImage.transform = CGAffineTransformMakeRotation(myRadians);
     
     int truHeading = [newHeading trueHeading];
@@ -196,6 +197,7 @@
     if(myNum > 360)
         myNum = myNum - 360;
     myNum = myNum - 180;
+    
     makkeX = [NSNumber numberWithInt:myNum];
     
     int frameWidth;

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) LocalNotificationsManager *lnm;
 @property (nonatomic, strong) PrayTimesModel *model;
 @property (nonatomic) int monthPlus;
+@property (nonatomic, strong) NSMutableArray *pages;
 @end
 
 @implementation PrayTimesViewController
@@ -27,6 +28,7 @@
 @synthesize lnm = _lnm;
 @synthesize num;
 @synthesize model = _model;
+@synthesize pages = _pages;
 
 - (LocalNotificationsManager *)lnm
 {
@@ -114,6 +116,8 @@
     self.locationManager.delegate = self;
     self.locationManager.headingOrientation = CLDeviceOrientationFaceUp;
     [self.locationManager startUpdatingLocation];
+    
+    self.pages = [NSMutableArray array];
 }
 
 
@@ -127,10 +131,11 @@
             frameSize = 768;
             
             PrayItemViewController_iPad *item_iPad = [[PrayItemViewController_iPad alloc] init];
+            [self.pages addObject:item_iPad];
             item_iPad.dayID = num;
             item_iPad.dataSource = self;
             
-            [item_iPad.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 768, 100)];
+            [item_iPad.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 768, 924)];
             [scrollView addSubview:item_iPad.view];
             [scrollView setContentSize:CGSizeMake(item_iPad.view.frame.origin.x + item_iPad.view.frame.size.width, item_iPad.view.frame.size.height)];
             
@@ -144,7 +149,7 @@
             item.dayID = num;
             item.dataSource = self;
             
-            [item.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 100)];
+            [item.view setFrame:CGRectMake(scrollView.contentSize.width, 0, 320, 480)];
             [scrollView addSubview:item.view];
             [scrollView setContentSize:CGSizeMake(item.view.frame.origin.x + item.view.frame.size.width, item.view.frame.size.height)];
             
@@ -159,6 +164,7 @@
 
 - (void)requestCompleted:(ASIHTTPRequest *)request
 {
+    NSLog(@"RequestComplete");
     [spinner stopAnimating];
     
     NSString *responseString = [request responseString];
@@ -213,10 +219,10 @@
         
         [self.model addPrayTime:time];
     }
+    self.monthPlus++;
     
     [self createButton];
     [self createButton];
-    self.monthPlus++;
 }
 
 - (void)requestError:(ASIHTTPRequest *)request

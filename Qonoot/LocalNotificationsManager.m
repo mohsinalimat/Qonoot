@@ -150,9 +150,9 @@ static LocalNotificationsManager *sharedMyManager = nil;
         UILocalNotification *notification = [array objectAtIndex:i];
         NSString *message = [notification.userInfo valueForKey:@"message"];
         NSString *round = [notification.userInfo valueForKey:@"round"];
-        NSLog(@"Messa: %@", message);
-        NSLog(@"Round: %@", round);
-        NSLog(@"----------");
+        //NSLog(@"Messg: %@", message);
+        //NSLog(@"Round: %@", round);
+        //NSLog(@"----------");
     }
     NSLog(@"--------------------------------");
     

@@ -194,7 +194,7 @@
 
 //returns a direction (in degrees) between the receiver and the given location 
 - (CLLocationDirection)directionToLocation:(CLLocation*)location;
-{    
+{
     return [CLLocation directionFromCoordinate:self.coordinate toCoordinate:location.coordinate];
     
 }

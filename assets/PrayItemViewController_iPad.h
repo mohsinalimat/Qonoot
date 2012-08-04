@@ -27,7 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *maghribLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ishaLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIButton *alarmButton;
-- (IBAction)alarmButtonTapped:(id)sender;
+- (IBAction)sinaTap:(id)sender;
 
 @end

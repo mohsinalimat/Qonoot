@@ -20,7 +20,6 @@
 @synthesize zuhrLabel;
 @synthesize ishaLabel;
 @synthesize dateLabel;
-@synthesize alarmButton;
 @synthesize maghribLabel;
 @synthesize sunriseLabel;
 @synthesize asrLabel;
@@ -70,7 +69,6 @@
     [self setSunriseLabel:nil];
     [self setAsrLabel:nil];
     [self setDateLabel:nil];
-    [self setAlarmButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -80,7 +78,7 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-- (IBAction)alarmButtonTapped:(id)sender {
+- (IBAction)sinaTap:(id)sender {
     NSString *round = @"fajr";
     [[NSNotificationCenter defaultCenter] postNotificationName:@"addLocalNotification" object:round];
 }

@@ -8,6 +8,19 @@
 
 #import "PrayTime.h"
 @implementation PrayTime
+
+@synthesize dayIndex;
+@synthesize weekDay;
+@synthesize day;
+@synthesize month;
+@synthesize year;
+@synthesize asr;
+@synthesize fajr;
+@synthesize isha;
+@synthesize maghrib;
+@synthesize sunrise;
+@synthesize zuhr;
+
 - (id)init {
     if (self = [super init]) {
         [self setDayIndex:@"-1"];
@@ -43,79 +56,6 @@
     }
     
     return converted;
-}
-
-- (NSString *)dayIndex {
-    return dayIndex;
-}
-- (NSString *)weekDay {
-    return weekDay;
-}
-- (NSString *)day {
-    return day;
-}
-- (NSString *)month {
-    return month;
-}
-- (NSString *)year {
-    return year;
-}
-- (NSString *)fajr {
-    return fajr;
-}
-- (NSString *)sunrise {
-    return sunrise;
-}
-- (NSString *)zuhr {
-    return zuhr;
-}
-- (NSString *)asr {
-    return asr;
-}
-- (NSString *)maghrib {
-    return maghrib;
-}
-- (NSString *)isha {
-    return isha;
-}
-
-- (void)setDayIndex:(NSString *)input {
-    dayIndex = input;
-}
-- (void)setWeekDay:(NSString *)input{
-    weekDay = input;
-}
-- (void)setDay:(NSString *)input {
-    day = input;
-}
-- (void)setMonth:(NSString *)input {
-    month = input;
-}
-- (void)setYear:(NSString *)input {
-    year = input;
-}
-- (void)setFajr:(NSString *)input
-{
-    fajr = input;
-}
-- (void)setSunrise:(NSString *)input
-{
-    sunrise = input;
-}
-- (void)setZuhr:(NSString *)input
-{
-    zuhr = [self convertTo24:input];
-}
-- (void)setAsr:(NSString *)input {
-    asr = [self convertTo24:input];
-}
-- (void)setMaghrib:(NSString *)input
-{
-    maghrib = [self convertTo24:input];
-}
-- (void)setIsha:(NSString *)input
-{
-    isha = [self convertTo24:input];
 }
 
 /* This code has been added to support encoding and decoding my objecst */
